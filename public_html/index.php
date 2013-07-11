@@ -120,7 +120,7 @@ echo '<div class="span4 well pull-right">
 			
 			<a href=/donate.php><button class="btn btn-success">Donate</button></a>
 			
-			<div class="input-append pull-right"><form name='input' action='search.php' method='post'><input type="text" id="query" name="query"><span class="add-on">Search</span><form></div>
+			<!--<div class="input-append pull-right"><form name='input' action='search.php' method='post'><input type="text" id="query" name="query"><span class="add-on">Search</span><form></div>-->
 		</div>
 
 <table class="table table-striped table-condensed">

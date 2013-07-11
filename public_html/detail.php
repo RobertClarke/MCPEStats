@@ -76,18 +76,17 @@ catch( MinecraftQueryException $e )
 }	
 
 ?>
-			<h1>Minecraft PE Server List</h1>
-            <p>is a directory for all the Minecraft PE servers running PocketMine. <br>Minecraft Pocket Realms support will be released when it is out of beta. <br>All connection between you and our server is secured by SSL issued by CloudFlare. <br>You can also register to add your own server.</p>
-						
-			<a href=/index.php><button class="btn btn-success">Server Index</button></a>
+			<h1>Minecraft PE Servers</h1>
+<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. You better <a href="http://craftstats.com">follow us on Twitter!</a> :)</p>
+			<a href=/><button class="btn btn-success">Home</button></a>
 			<a href=/insert.php><button class="btn btn-success">Add Server</button></a>
-			<a href=http://mcpelist.freshdesk.com><button class="btn btn-success">Support</button></a>
+			<a href=http://craftstats.com><button class="btn btn-success">CraftStats</button></a>
 			<?
 			if ($login->isUserLoggedIn() != true)
 			echo '<a href=/login/index.php><button class="btn btn-success">Login / Register</button></a>';
 			?>
 			
-			<a href=/donate.php><button class="btn btn-success">Donate / Cheap Servers</button></a>
+			<a href=/donate.php><button class="btn btn-success">Donate</button></a>
 			
 			<div class="input-append pull-right"><form name='input' action='search.php' method='post'><input type="text" id="query" name="query"><span class="add-on">Search</span><form></div>
 			

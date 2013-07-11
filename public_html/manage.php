@@ -86,30 +86,7 @@ function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $c
 }
 ?>
     <div class="container">
-    	<div class="page-header">
-    <?
-    if ($login->isUserLoggedIn() == true) {
-	include("login/views/logged_in.php");
-}
-else
-{
-	include("login/views/not_logged_in.php");
-	exit();
-}
-?>
-			<h1>Minecraft PE Server List</h1>
-            
-			<p>is a directory for all the Minecraft PE servers running PocketMine. <br>Minecraft Pocket Realms support will be released when it is out of beta. <br>All connection between you and our server is secured by SSL issued by CloudFlare. <br>You can also register to add your own server.</p>			
-			<a href=/index.php><button class="btn btn-success">Server Index</button></a>
-			<a href=/insert.php><button class="btn btn-success">Add Server</button></a>
-			<a href=http://mcpelist.freshdesk.com><button class="btn btn-success">Support</button></a>
-			<?
-			if ($login->isUserLoggedIn() != true)
-			echo '<a href=/login/index.php><button class="btn btn-success">Login / Register</button></a>';
-			?>
-			
-			<a href=/donate.php><button class="btn btn-success">Donate / Cheap Servers</button></a>
-		</div>
+<?require_once($_SERVER['DOCUMENT_ROOT'].'/header.php');?>
 <h2>Manage your servers</h2>
 <table class="table table-striped table-condensed">
 	  <thead>

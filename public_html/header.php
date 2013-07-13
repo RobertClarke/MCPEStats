@@ -30,3 +30,16 @@ echo '<div class="span4 well pull-right">
 			
 			<!--<div class="input-append pull-right"><form name='input' action='search.php' method='post'><input type="text" id="query" name="query"><span class="add-on">Search</span><form></div>-->
 		</div>
+		<center
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-8782622759360356";
+			/* MCPE Header */
+			google_ad_slot = "4769895837";
+			google_ad_width = 970;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</center>

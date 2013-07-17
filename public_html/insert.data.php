@@ -29,11 +29,11 @@ if(isset($_POST['IsWhitelisted']))
 $data = addIP($_POST['IP'], $port, $_SESSION['user_name'], $whitelist);
 if($data === true)
 {
-	header( 'Location: http://mcpe-list.sekjun9878.info/index.php?serveradded=true') ;
+	header( 'Location: /index.php?serveradded=true') ;
 }
 else
 {
-	header( 'Location: http://mcpe-list.sekjun9878.info/index.php?serveradded='.$data) ;
+	header( 'Location: /index.php?serveradded='.$data) ;
 }
 ?>
 

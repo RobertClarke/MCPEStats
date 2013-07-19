@@ -1,99 +1,31 @@
-<?
-require_once($_SERVER['DOCUMENT_ROOT']."/login/libraries/password_compatibility_library.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/login/config/db.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/login/config/hashing.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/login/classes/Login.php");
-$login = new Login();
+<?php 
+include 'global.inc.php';
+include 'header.php';
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta http-equiv="Refresh" content="180">
-	<title>Minecraft PE Servers</title>
-	
-	<? include($_SERVER['DOCUMENT_ROOT']."/headscript.php"); ?>
-	
-	<link rel="stylesheet" href="/bootstrap.css">
-	<style type="text/css">
-		footer {
-			margin-top: 45px;
-			padding: 35px 0 36px;
-			border-top: 1px solid #e5e5e5;
-		}
-		footer p {
-			margin-bottom: 0;
-			color: #555;
-		}
-	</style>
-</head>
+if($_GET['delete']){
+	$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
+mysqli_select_db($connect, "mcpestat_MCPE");
 
-<body>
+$id = strip_tags($_GET['delete']);
+$id = preg_replace('/\s\s+/', ' ', $id);
+$id = mysqli_real_escape_string($connect, $id);
 
+$result = array();
 
-<? $Timer = MicroTime( true ); 
+$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules FROM ServerList1 WHERE id=? LIMIT 0,1");
+mysqli_stmt_bind_param($stmt, "d", $id);
+mysqli_stmt_bind_result($stmt, $result['id'], $result['Name'], $result['IP'], $result['Port'], $result['Last_Players'], $result['Last_MaxPlayers'], $result['WhetherOnline'], $result['RegisteredDate'], $result['WhetherOnlineNum'], $result['Owner'], $result['WhetherWhitelisted'], $result['Description'], $result['ServerRules']);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/MinecraftQuery_Simple.php');
+if($result['Owner'] == $_SESSION['user_name']){
+	$query = "delete from ServerList1 where owner = '$result[Owner]' AND id = $id";
 
-/*function display_r_t($thead, $array)
-{
-	echo '<table class="table table-striped table-condensed">
-	<thead>
-	<tr>';
-	foreach($thead as $c)
-	{
-		echo "<th>$c</th>";
-	}
-	echo '</tr>
-	</thead>';
-	echo '<tbody>';
-	foreach($array as $key => $value)
-	{
-		echo '<tr>';
-		echo "<th>$key</th>";
-		foreach($value as $key => $value
-}*/
-
-function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $whitelist, $id)
-{
-	echo "<tr>";
-	if($onlinestatus == "Online")
-          	echo "<th><a href=detail.php?id=$id>$name</a></th>";
-        else
-        	echo "<th>$name</th>";
-        	
-        echo "<th>$customname</th>";
-        
-        if($whitelist == 0)
-          	echo '<th><span class="label label-success">Public</span></th>';
-          else if($whitelist == 1)//Whitelist
-          	echo '<th><span class="label label-important">Whitelisted</span></th>';
-          else if($whitelist == 2)//Registration
-          	echo '<th><span class="label label-warning">Registration</span></th>';
-          else
-          	echo '<th><span class="label label-important">Unknown</span></th>';
-        
-        echo "
-          <th>$ip:$port</th>
-          <th>$players/$maxplayers</th><th>";
-          if($onlinestatus == "Online")
-          	echo '<span class="label label-success">';
-          else if($onlinestatus == "Offline")
-          	echo '<span class="label label-important">';
-          else
-          	echo '<span class="label label-warning">';
-          echo "$onlinestatus</th>                                         
-      </tr>"; 
-      
-      return true;
+$result = mysqli_query($connect, $query);
+}
 }
 ?>
-    
-
-  <div class="container">
-
-  	<?require_once($_SERVER['DOCUMENT_ROOT'].'/header.php');?>
 
 <table class="table table-striped table-condensed">
 	  <thead>
@@ -101,8 +33,8 @@ function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $c
           <th>Name</th>
           <th>Owner</th>
           <th>Whitelist</th>
-          <th>Server IP : Port</th>
-          <th>Players / MaxPlayers</th>
+          <th>Server IP</th>
+          <th>Players</th>
           <th>Status</th>                                         
       </tr>
   </thead>   
@@ -111,51 +43,66 @@ function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $c
 //shuffle($data);
 
 	
-
+$servers = array();
 $connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
 mysqli_select_db($connect, "mcpestat_MCPE");
 
-$query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='0' ORDER BY rand()";
+$query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='0' ORDER BY rand(HOUR(NOW()))";
 
 $result = mysqli_query($connect, $query);
 
 while($row = $result->fetch_assoc()){
-    display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+    array_push($servers,$row);
 }
 
-$query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='2' ORDER BY rand()";
+$query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='2' ORDER BY rand(HOUR(NOW()))";
 
 $result = mysqli_query($connect, $query);
 
 while($row = $result->fetch_assoc()){
-    display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+    array_push($servers,$row);
 }
 
-$query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='1' ORDER BY rand()";
+$query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='1' ORDER BY rand(HOUR(NOW()))";
 
 $result = mysqli_query($connect, $query);
 
 while($row = $result->fetch_assoc()){
-    display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+    array_push($servers,$row);
 }
 
-$query = "select * from ServerList1 where WhetherOnline='Offline' ORDER BY rand()";
+$query = "select * from ServerList1 where WhetherOnline='Offline' ORDER BY rand(HOUR(NOW()))";
 
 $result = mysqli_query($connect, $query);
 
 while($row = $result->fetch_assoc()){
-   display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+	array_push($servers,$row);
 }
 
-$query = "select * from ServerList1 where WhetherOnline='Pending' ORDER BY rand()";
+$query = "select * from ServerList1 where WhetherOnline='Pending' ORDER BY rand(HOUR(NOW()))";
 
 $result = mysqli_query($connect, $query);
 
 while($row = $result->fetch_assoc()){
-   display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
-}
+	array_push($servers,$row);
+  }
 
+$cpage = ($_GET['p'] ? $_GET['p'] : 1);
+$cpage = max(1,min($cpage,ceil(count($servers)/25)));
+$pagemin = ($cpage-1)*25;
+$pagemax = $pagemin+25;
+$i = 0;
+foreach($servers as $row){
+	if($i<$pagemin || $i>=$pagemax){
+	$i++;
+	continue;
+	}
+	$i++;
+	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+}
 mysqli_close($connect);
+
+
 
 /*include($_SERVER['DOCUMENT_ROOT']."/blog.php");*/
 
@@ -199,9 +146,36 @@ if ($login->messages) {
 ?>
 </tbody>
 </table>
-		<footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
-		</footer>
-	</div>
-</div>
-</body></html>
+<div class="row">
+
+			<div class="six columns centered">
+			<?PHP 
+			$tservers = ceil(count($servers)/25);
+			$dictionary  = array(
+        2                   => 'two',
+        3                   => 'three',
+        4                   => 'four',
+		 5                   => 'five'
+    );
+	for($i = $cpage-1;$i<$cpage+2;$i++){
+					if($i >= 1 && $i <= $tservers){
+						$listout .= '<li><a href="/p/'.$i.'" class="button radius '.($i == $cpage ? 'active':'').'">'.($i).'</a></li>';
+						$lcount++;
+					}
+				}
+			?>
+				<ul class="button-group radius even <?php echo $dictionary[$lcount+2];?>-up">
+						<?php
+				
+				echo '<li><a href="/" class="button radius '.($cpage == 0 ? 'active':'').'">&laquo;</a></li>';
+				
+				echo $listout;
+				
+				echo '<li><a href="/p/'.$tservers.'"class="button radius '.($cpage == $tservers ? 'active':'').'">&raquo;</a></li>';
+				?>
+				</ul>
+				
+		</div>
+      </div>
+	  
+<?php include 'footer.php'; ?>

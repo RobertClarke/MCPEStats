@@ -1,45 +1,131 @@
-    	<div class="page-header">
-    	<?
-			if ($login->isUserLoggedIn() == true) {
-include("login/views/logged_in.php");
-}
-else
-{
-echo '<div class="span4 well pull-right">
-	<div class="row">
-		<div class="span1"><a href="" class="thumbnail"><img src="https://www.gravatar.com/avatar/asdfsad?s=50&d=mm&r=g&f=y" alt="Gravatar"></a></div>
-		<div class="span3">
-		<strong>Welcome</strong>!<br>
-		<a href="/login/index.php"><span class="badge badge-success">Log In</span></a>
-		</div>
-	</div>
-</div>';
-}
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Lang" content="en">
+  <title><?php echo ($title ? $title : 'Minecraft PE Servers'); ?></title>
+  <meta name="description" content="<?php echo ($desc ? $desc : 'Minecraft Pocket Edition Servers. Find one now!'); ?>">
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if !IE 7]>
+  <style type="text/css">
+    #wrap {display:table;height:100%}
+  </style>
+<![endif]-->
+	  <!-- Included JS Files (Compressed) -->
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="/javascripts/app.js"></script>
+  <link rel="stylesheet" href="/bootstrap.css">
+  <script src="/javascripts/modernizr.foundation.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$(".togglelogos").click(function(){
+			 $('.box.logo').toggleClass("open",100);
+		});
+	});
+  </script>
+</head>
+
+<body>
+<body>
+  <?php global $index; 
+  if($index){
+?>  <div class="featurebg" style="background:url(/images/bigbg<?php echo rand(1,12); ?>.jpg) no-repeat center;background-size:100%;">
+    
+  </div> <?php } ?>
+  <div class="navigation">
+    
+  </div>
+  
+
+
+  <div id="wrap">
+    <div class="row" id="main">
+
+    <div class="three columns sidecontainer">
+      <div class="row  box logo"> 
+
+        <a href="/">
+		<img src="/images/logo.png"/>
+		</a>
+		<hr/>
+		<a href="http://craftstats.com/">
+		<img src="http://craftstats.com/images/logo.png"/>
+		</a>
+		<a class="togglelogos"></a>
+      </div>
+    </div>
+	<div class="nine columns content">
+      <div class="row">
+       <div class="twelve columns">
+          <nav class="top-bar">
+            <ul>
+              <li class="toggle-topbar"><a href="#"></a></li>
+            </ul>
+
+            <section>
+              <!-- Left Nav Section -->
+              <ul class="left">
+                <li>
+                  <a href="/insert.php">add server</a>
+                </li>
+                <li>
+                  <a href="http://craftstats.com">craftstats</a>
+                </li>
+              </ul>
+
+              <!-- Right Nav Section -->
+              <ul class="right">
+				
+				<?php echo ($login->isUserLoggedIn()  ? '
+				<li><a href=/login/edit.php>'.$_SESSION['user_name'].'</a></li>
+				<li><a href="/manage.php">my servers</a></li>
+			<li><a href="/login/index.php?logout">logout</a></li>
+				' : '<li><a href="/login/index.php">login</a></li>')?>
+              </ul>
+            </section>
+          </nav>
+       </div>
+      </div>
+</div>
+<div class="row">
+<div class="twelve columns">
+<?php
+if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 ?>
-			<h1>Minecraft PE Servers</h1>
-<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. You better <a href="http://craftstats.com">follow us on Twitter!</a> :)</p>
-			<a href=/><button class="btn btn-success">Home</button></a>
-			<a href=/insert.php><button class="btn btn-success">Add Server</button></a>
-			<a href=http://craftstats.com><button class="btn btn-success">CraftStats</button></a>
-			<?
-			if ($login->isUserLoggedIn() != true)
-			echo '<a href=/login/index.php><button class="btn btn-success">Login / Register</button></a>';
-			?>
-			
-			<a href=/donate.php><button class="btn btn-success">Donate</button></a>
-			
-			<!--<div class="input-append pull-right"><form name='input' action='search.php' method='post'><input type="text" id="query" name="query"><span class="add-on">Search</span><form></div>-->
-		</div>
-		<center
-			<script type="text/javascript"><!--
-			google_ad_client = "ca-pub-8782622759360356";
-			/* MCPE Header */
-			google_ad_slot = "4769895837";
-			google_ad_width = 970;
-			google_ad_height = 90;
-			//-->
-			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-		</center>
+<div class="row">
+<div class="twelve columns">
+<div class="twelve columns main feat">
+<h1>Minecraft PE Servers</h1>
+<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. <br/>You'd better <a href="http://craftstats.com">follow us on Twitter!</a> :)</p>
+</div>
+</div>
+</div>
+<?php } ?>
+<div style="margin-bottom:20px;position:relative;top:20px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8782622759360356";
+/* MCPE Header */
+google_ad_slot = "4769895837";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="twelve columns main">

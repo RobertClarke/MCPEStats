@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Minecraft PE Server List</title>
-	
-	<? include($_SERVER['DOCUMENT_ROOT']."/headscript.php"); ?>
-	
-	<link rel="stylesheet" href="/bootstrap.css">
-	<style type="text/css">
-		footer {
-			margin-top: 45px;
-			padding: 35px 0 36px;
-			border-top: 1px solid #e5e5e5;
-		}
-		footer p {
-			margin-bottom: 0;
-			color: #555;
-		}
-	</style>
-</head>
+<?php 
+include 'global.inc.php';
+include 'header.php';
+?>
 
-<body>
-    <div class="container">
-    	<div class="page-header">
-		<h1>Minecraft PE Server List</h1>
 		<?$Timer = MicroTime( true ); 
 		// show negative messages
 if ($login->errors) {
@@ -45,19 +24,18 @@ if ($login->messages) {
     }
 }
 ?>
-	</div>
-	<?php echo "<a href=/index.php><< Back</a><br>";?>
-
-	<form class="form-horizontal" name="user_edit_form_email" action='/login/edit.php' method="POST">
-  <fieldset>
-      <div id="legend">
+<div id="legend">
       <legend class="">Edit your details</legend>
     </div>
+<div class="six columns">
+	<form class="form-horizontal" name="user_edit_form_email" action='/login/edit.php' method="POST">
+  <fieldset>
+      
     <div class="control-group">
       <!-- Username -->
       <label class="control-label"  for="edit_input_email">New Email</label>
       <div class="controls">
-         <input id="edit_input_email" class="input-xlarge" type="email" name="user_email" required /> (currently: <?php echo $_SESSION['user_email']; ?>)
+         <input id="edit_input_email" class="input-xlarge" type="email" placeholder="<?php echo $_SESSION['user_email']; ?>" name="user_email" required /> 
       </div>
     </div> 
  
@@ -69,6 +47,8 @@ if ($login->messages) {
     </div>
   </fieldset>
 </form>
+</div>
+<div class="six columns">
 	<form class="form-horizontal" name="user_edit_form_password" action='/login/edit.php' method="POST">
   <fieldset>
     <div class="control-group">
@@ -103,18 +83,8 @@ if ($login->messages) {
     </div>
   </fieldset>
 </form>
-
-	
-	
-	
-	
-	
-	
-	
-	
-    <footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
-		</footer>
-	</div>
 </div>
-</body></html>
+<?php
+
+	include 'footer.php';
+?>

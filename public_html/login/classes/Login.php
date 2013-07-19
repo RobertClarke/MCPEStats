@@ -535,7 +535,7 @@ class Login {
      */
     public function sendPasswordResetMail() {
         
-        $to      = $this->user_name;
+        $to      = $this->user_email;
         $subject = EMAIL_PASSWORDRESET_SUBJECT;
         
         $link    = EMAIL_PASSWORDRESET_URL.'?user_name='.urlencode($this->user_name).'&verification_code='.urlencode($this->user_password_reset_hash);
@@ -548,7 +548,6 @@ class Login {
         $header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         //$header .= "To: <$to>" . "\r\n";
         $header .= 'From: '.EMAIL_PASSWORDRESET_FROM."\r\n";
-
         if (mail($to, $subject, $body, $header)) {
             
             $this->messages[] = "Password reset mail successfully sent!";

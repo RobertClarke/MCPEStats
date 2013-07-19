@@ -1,51 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta http-equiv="Refresh" content="300">
-	<title>Minecraft PE Server List</title>
-	
-	<? include($_SERVER['DOCUMENT_ROOT']."/headscript.php"); ?>
-	
-	<link rel="stylesheet" href="/bootstrap.css">
-	<style type="text/css">
-		footer {
-			margin-top: 45px;
-			padding: 35px 0 36px;
-			border-top: 1px solid #e5e5e5;
-		}
-		footer p {
-			margin-bottom: 0;
-			color: #555;
-		}
-		
-		.centered-text {
-    text-align:center
-}    
+<?php 
 
-	</style>
-</head>
+include 'global.inc.php';
 
-<body>
-
-<? $Timer = MicroTime( true ); 
-
-require_once("login/libraries/password_compatibility_library.php");
-require_once("login/config/db.php");
-require_once("login/config/hashing.php");
-require_once("login/classes/Login.php");
-$login = new Login();
-
-require __DIR__ . '/MinecraftQuery.class.php';
-$Query = new MinecraftQuery( );
-	
-?>
-    <div class="container">
-    	<div class="page-header">
-    <?
-    if ($login->isUserLoggedIn() == true) {
-	include("login/views/logged_in.php");
-}
 
 if(!(isset($_GET['id'])))
 	exit();
@@ -66,6 +22,14 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
 
+$desc = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. Join now!';
+$title = $result['Name'].' - Minecraft PE Server';
+include 'header.php';
+?>
+    <?
+   
+
+
 try
 {
 		$Query->Connect($result['IP'], $result['Port'], 5 );
@@ -76,35 +40,6 @@ catch( MinecraftQueryException $e )
 }	
 
 ?>
-			<h1>Minecraft PE Servers</h1>
-<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. You better <a href="http://craftstats.com">follow us on Twitter!</a> :)</p>
-			<a href=/><button class="btn btn-success">Home</button></a>
-			<a href=/insert.php><button class="btn btn-success">Add Server</button></a>
-			<a href=http://craftstats.com><button class="btn btn-success">CraftStats</button></a>
-			<?
-			if ($login->isUserLoggedIn() != true)
-			echo '<a href=/login/index.php><button class="btn btn-success">Login / Register</button></a>';
-			?>
-			
-			<a href=/donate.php><button class="btn btn-success">Donate</button></a>
-			
-			<div class="input-append pull-right"><form name='input' action='search.php' method='post'><input type="text" id="query" name="query"><span class="add-on">Search</span><form></div>
-			
-		</div>
-		<center
-			<script type="text/javascript"><!--
-			google_ad_client = "ca-pub-8782622759360356";
-			/* MCPE Header */
-			google_ad_slot = "4769895837";
-			google_ad_width = 970;
-			google_ad_height = 90;
-			//-->
-			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-		</center>
-		
 		<?php
 		if(isset($Error) or $result == 0)
 		{
@@ -191,8 +126,11 @@ catch( MinecraftQueryException $e )
 <br>
 </div>
 <br><br>
-<div class=thumbnail>
-<p class=text-center><b>Want to host servers like this one? <a href=/donate.php>Donate</a> and get a VPS!</b></p></div>
+<?php  if ($login->isUserLoggedIn() == true && $result['Owner'] == $_SESSION['user_name']) { ?><div class=thumbnail>
+<a href="/?delete=<?php echo $result['id']; ?>" class="btn btn-danger">Delete this server</a>
+</div>
+
+<?php } ?>
 </div>
 <div class='span6'>
 <div class='thumbnail'>
@@ -209,6 +147,7 @@ catch( MinecraftQueryException $e )
   </p>
 </div>
 <br><br>
+<div class='thumbnail'>
 <table class='table table-bordered table-striped'>
 <thead>
 <tr>
@@ -237,7 +176,7 @@ $re++;
 ?>
 
 </table>
-
+</div>
 </div>
 
 </div>
@@ -266,27 +205,4 @@ $re++;
 </div>-->
 <hr>
  
-     <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'mcpe-list'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-	<br>
-	 The "Around the Web" articles above(Excluding the comments) are powered by DISQUS and is not related nor is it the opinion of sekjun9878 / Minecraft PE Server List. They are very interesting articles though, so I would appriciate it if you could take time to read the articles. They are of very high quality, I promise!
-
-
-		<footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
-		</footer>
-	</div>
-</div>
-</body></html>
+<?php include 'footer.php';?>

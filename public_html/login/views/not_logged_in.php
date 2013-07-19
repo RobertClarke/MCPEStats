@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Minecraft PE Server List</title>
-	
-	<? include($_SERVER['DOCUMENT_ROOT']."/headscript.php"); ?>
-	
-	<link rel="stylesheet" href="/bootstrap.css">
-	<style type="text/css">
-		footer {
-			margin-top: 45px;
-			padding: 35px 0 36px;
-			border-top: 1px solid #e5e5e5;
-		}
-		footer p {
-			margin-bottom: 0;
-			color: #555;
-		}
-	</style>
-</head>
+<?php 
+include 'global.inc.php';
+include 'header.php';
+?>
 
-<body>
-    <div class="container">
-    	<div class="page-header">
-		<h1>Minecraft PE Server List</h1>
 		<?$Timer = MicroTime( true ); 
 		// show negative messages
 if ($login->errors) {
@@ -45,9 +24,8 @@ if ($login->messages) {
     }
 }
 ?>
-	</div>
-	<?php echo "<a href=/index.php><< Back</a><br>";?>
-<form class="form-horizontal" name="loginform" action="/index.php" method="POST">
+<div class="six columns centered">
+<form class="form-horizontal" name="loginform" action="/login/index.php" method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Login</legend>
@@ -72,23 +50,17 @@ if ($login->messages) {
     <div class="control-group">
       <!-- Button -->
       <div class="controls">
-        <button class="btn btn-success" name="login" >Login</button>
+        <button class="btn btn-success" name="login" style="float:left;">Login</button>
+		<a href=/login/password_reset.php class="btn btn-success" style="float:left;margin-left:15px;">Reset Password</a>
+		<a href=/login/register.php class="btn btn-success" style="float:right;">Register</a>
       </div>
     </div>
   </fieldset>
+  
 </form>
-	<a href=/login/register.php><button class="btn btn-success">Register</button></a>
 	
-	
-	
-	
-	
-	
-	
-	
-    <footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
-		</footer>
-	</div>
 </div>
-</body></html>
+<?php
+
+	include 'footer.php';
+?>

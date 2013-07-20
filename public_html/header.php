@@ -130,7 +130,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <div class="twelve columns">
 <div class="twelve columns main feat">
 <h1>Minecraft PE Servers</h1>
-<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. <br/>You'd better <a href="http://twitter.com/craftstats">follow us on Twitter!</a> :)</p>
+<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. <br/><b>Check out the new Minecraft PE hosting, and <a href="http://servercrate.com/mcpe">start your own server with PocketMine today!</a></b></p>
 </div>
 </div>
 </div>

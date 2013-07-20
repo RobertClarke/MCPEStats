@@ -102,6 +102,9 @@
                 <li>
                   <a href="http://craftstats.com">craftstats</a>
                 </li>
+                <li>
+                  <a href="https://servercrate.com/mcpe.php">start a server</a>
+                </li>
               </ul>
 
               <!-- Right Nav Section -->

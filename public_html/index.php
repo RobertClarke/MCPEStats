@@ -120,7 +120,7 @@ if(isset($_GET['serveradded']) and $_GET['serveradded'] != 'true')
 	echo'
 		<div class="alert alert-error">  
   <a class="close" data-dismiss="alert">×</a>  
-  <strong>Error!</strong> '.htmlspecialchars($_GET['serveradded']).'
+  <strong>Error!</strong> '.urldecode($_GET['serveradded']).'
 </div>  
 ';
 }

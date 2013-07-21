@@ -1,10 +1,6 @@
 <?
-
+include 'global.inc.php';
 require __DIR__ . '/insert.class.php';
-require_once("login/libraries/password_compatibility_library.php");
-require_once("login/config/db.php");
-require_once("login/config/hashing.php");
-require_once("login/classes/Login.php");
 $login = new Login();
 
 if ($login->isUserLoggedIn() != true) {

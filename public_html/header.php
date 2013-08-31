@@ -11,8 +11,8 @@
   
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Lang" content="en">
-  <title><?php echo ($title ? $title : 'Minecraft PE Servers'); ?></title>
-  <meta name="description" content="<?php echo ($desc ? $desc : 'Minecraft Pocket Edition Servers. Find one now!'); ?>">
+  <title><?php echo ($title ? $title : 'Minecraft PE Servers | MCPE Server List'); ?></title>
+  <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends.'); ?>">
   
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="/stylesheets/foundation.min.css">
@@ -91,8 +91,8 @@
 		<img src="/images/logo.png"/>
 		</a>
 		<hr/>
-		<a href="http://craftstats.com/">
-		<img src="http://craftstats.com/images/logo.png"/>
+		<a href="http://minecraftservers.com/">
+		<img src="http://minecraftservers.com/images/logo.png"/>
 		</a>
 		<a class="togglelogos"></a>
       </div>

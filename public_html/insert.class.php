@@ -1,7 +1,7 @@
 <?
 function verifySoftware($software)
 {
-	if($software == "PocketMine-MP Alpha_1.3" or $software == "PocketMine-MP Alpha_1.3.1dev" or $software == "PocketMine-MP Alpha_1.3dev" or $software == "PocketMine-MP Alpha_1.2" or $software == "PocketMine-MP Alpha_1.2dev" or $software == "PocketMine-MP Alpha_1.3.1"  or $software == "PocketMine-MP Alpha_1.3.1dev"  or $software == "PocketMine-MP Alpha_1.3.2"  or $software == "PocketMine-MP Alpha_1.3.2dev"  or $software == "PocketMine-MP Alpha_1.4dev"  or $software == "PocketMine-MP Alpha_1.4" or $software == "PocketMine-MP Alpha_1.3.3" or $software == "PocketMine-MP Alpha_1.3.3dev" or $software == "PocketMine-MP Alpha_1.3.4" or $software == "PocketMine-MP Alpha_1.3.4dev")
+	if(strpos($software, "PocketMine-MP") !== false)
 		return true;
 	else
 		return false;

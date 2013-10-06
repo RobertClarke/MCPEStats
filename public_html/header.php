@@ -1,13 +1,3 @@
-<?
-require_once(__DIR__."/login/libraries/password_compatibility_library.php");
-require_once(__DIR__."/login/config/db.php");
-require_once(__DIR__."/login/config/hashing.php");
-require_once(__DIR__."/login/classes/Login.php");
-
-$login = new Login();
-$Timer = MicroTime( true );
-?>
-
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -131,7 +121,7 @@ $Timer = MicroTime( true );
               </ul>
 
               <!-- Right Nav Section -->
-              <ul class="right">
+              <?/*<ul class="right">
 				
 				<?php
 				echo ($login->isUserLoggedIn()  ? '
@@ -139,7 +129,7 @@ $Timer = MicroTime( true );
 				<li><a href="/manage.php">my servers</a></li>
 			<li><a href="/login/index.php?logout">logout</a></li>
 				' : '<li><a href="/login/index.php">login</a></li>')?>
-              </ul>
+              </ul>*/?>
             </section>
           </nav>
        </div>

@@ -1,4 +1,6 @@
 <?
+require_once(__DIR__.'../constants.php');
+
 function verifySoftware($software)
 {
 	if(strpos($software, "PocketMine-MP") !== false)
@@ -9,7 +11,7 @@ function verifySoftware($software)
 
 function addIP($ip, $port = "19132", $username, $whitelist)
 {
-	$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
+	$connect = mysqli_connect(DB_NAME, DB_HOST, DB_PASS);
 	mysqli_select_db($connect, "mcpestat_MCPE");
 
 	$ip = strip_tags($ip);

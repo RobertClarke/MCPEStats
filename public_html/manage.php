@@ -1,5 +1,6 @@
 <?
 require_once(__DIR__.'../global.inc.php');
+require_once(__DIR__.'../constants.php');
 include 'header.php';
 
 function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $id)
@@ -81,7 +82,7 @@ function isCustomName($data)
 }
 
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
+require_once(__DIR__.'../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
 mysqli_select_db($connect, "mcpestat_MCPE");
 
 if(in_array($_SESSION['user_name'], $login->moderators) === true)

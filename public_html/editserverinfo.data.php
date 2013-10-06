@@ -10,7 +10,7 @@ if ($login->isUserLoggedIn() != true) {
     exit();
 }
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
+require_once(__DIR__.'../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
 mysqli_select_db($connect, "mcpestat_MCPE");
 
 function setDescription($id, $text, &$connect)

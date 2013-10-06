@@ -1,6 +1,6 @@
 <?php 
 
-include 'global.inc.php';
+require_once(__DIR__.'../global.inc.php');
 
 
 if(!(isset($_GET['id'])))

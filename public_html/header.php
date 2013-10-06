@@ -123,7 +123,7 @@
               <!-- Right Nav Section -->
               <ul class="right">
 				
-				<?php $login = new Login();
+				<?php
 				echo ($login->isUserLoggedIn()  ? '
 				<li><a href=/login/edit.php>'.$_SESSION['user_name'].'</a></li>
 				<li><a href="/manage.php">my servers</a></li>

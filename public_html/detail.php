@@ -1,8 +1,4 @@
-<?php 
-
-require_once(__DIR__.'/../global.inc.php');
-
-
+<?php
 if(!(isset($_GET['id'])))
 	exit();
 
@@ -25,6 +21,7 @@ mysqli_stmt_close($stmt);
 $desc = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. Join now!';
 $title = $result['Name'].' - Minecraft PE Server';
 include 'header.php';
+require_once(__DIR__.'/../global.inc.php');
 ?>
     <?
    

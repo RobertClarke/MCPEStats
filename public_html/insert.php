@@ -1,6 +1,7 @@
-<?php 
-require_once(__DIR__.'/../global.inc.php');
+<?php
 include 'header.php';
+require_once(__DIR__.'/../global.inc.php');
+
 ?>
 
     <div id="legend">

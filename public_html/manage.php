@@ -1,7 +1,7 @@
 <?
+include 'header.php';
 require_once(__DIR__.'/../global.inc.php');
 require_once(__DIR__.'/../constants.php');
-include 'header.php';
 
 function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $id)
 {

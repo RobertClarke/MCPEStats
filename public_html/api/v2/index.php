@@ -10,7 +10,7 @@ $params = explode("/", $location);
 
 $command = $params[3];//Params starts from 1(api) 2(v2) 3(command)
 
-require_once(__DIR__.'../../../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
+require_once(__DIR__.'/../../../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
 mysqli_select_db($connect, "mcpestat_MCPE");
 
 function getFakePlayerList($count, $online)

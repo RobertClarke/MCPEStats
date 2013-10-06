@@ -1,7 +1,9 @@
 <?
+require_once(__DIR__.'/../constants.php');
+
 function verifySoftware($software)
 {
-	if($software == "PocketMine-MP Alpha_1.3" or $software == "PocketMine-MP Alpha_1.3.1dev" or $software == "PocketMine-MP Alpha_1.3dev" or $software == "PocketMine-MP Alpha_1.2" or $software == "PocketMine-MP Alpha_1.2dev" or $software == "PocketMine-MP Alpha_1.3.1"  or $software == "PocketMine-MP Alpha_1.3.1dev"  or $software == "PocketMine-MP Alpha_1.3.2"  or $software == "PocketMine-MP Alpha_1.3.2dev"  or $software == "PocketMine-MP Alpha_1.4dev"  or $software == "PocketMine-MP Alpha_1.4" or $software == "PocketMine-MP Alpha_1.3.3" or $software == "PocketMine-MP Alpha_1.3.3dev" or $software == "PocketMine-MP Alpha_1.3.4" or $software == "PocketMine-MP Alpha_1.3.4dev")
+	if(strpos($software, "PocketMine-MP") !== false)
 		return true;
 	else
 		return false;
@@ -9,8 +11,8 @@ function verifySoftware($software)
 
 function addIP($ip, $port = "19132", $username, $whitelist)
 {
-	$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
-	mysqli_select_db($connect, "mcpestat_MCPE");
+	$connect = mysqli_connect(DB_USER, DB_HOST, DB_PASS);
+	mysqli_select_db($connect, DB_NAME);
 
 	$ip = strip_tags($ip);
 	$ip = preg_replace('/\s\s+/', ' ', $ip);

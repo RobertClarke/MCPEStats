@@ -121,14 +121,15 @@
               </ul>
 
               <!-- Right Nav Section -->
-              <ul class="right">
+              <?/*<ul class="right">
 				
-				<?php echo ($login->isUserLoggedIn()  ? '
+				<?php
+				echo ($login->isUserLoggedIn()  ? '
 				<li><a href=/login/edit.php>'.$_SESSION['user_name'].'</a></li>
 				<li><a href="/manage.php">my servers</a></li>
 			<li><a href="/login/index.php?logout">logout</a></li>
 				' : '<li><a href="/login/index.php">login</a></li>')?>
-              </ul>
+              </ul>*/?>
             </section>
           </nav>
        </div>

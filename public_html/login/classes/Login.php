@@ -121,7 +121,7 @@ class Login {
         if (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
             
             // create a database connection, using the constants from config/db.php (which we loaded in index.php)
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
             
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -255,7 +255,7 @@ class Login {
         elseif (!empty($_POST['user_name']) && preg_match("/^(?=.{2,64}$)[a-zA-Z][a-zA-Z0-9]*(?: [a-zA-Z0-9]+)*$/", $_POST['user_name'])) {
             
             // creating a database connection
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
 
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -320,7 +320,7 @@ class Login {
             
             
             // creating a database connection
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
 
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -383,7 +383,7 @@ class Login {
                   && ($_POST['user_password_new'] === $_POST['user_password_repeat'])) {
                         
             // creating a database connection
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
 
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -478,7 +478,7 @@ class Login {
             $this->user_password_reset_hash = sha1(uniqid(mt_rand(), true));
             
             // creating a database connection
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
 
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -570,7 +570,7 @@ class Login {
         if (!empty($_GET["user_name"]) && !empty($_GET["verification_code"])) {
             
             // creating a database connection
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
 
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -639,7 +639,7 @@ class Login {
                 if (strlen($_POST['user_password_new']) >= 5) {
                     
                     // creating a database connection
-                    $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                    $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
 
                     // if no connection errors (= working database connection)
                     if (!$this->db_connection->connect_errno) {

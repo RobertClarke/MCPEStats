@@ -105,7 +105,7 @@ class Registration {
             // what exactly we want to reach to go into this if-block
 
             // creating a database connection
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
+            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
             // if no connection errors (= working database connection)
             if (!$this->db_connection->connect_errno) {
@@ -224,7 +224,7 @@ class Registration {
     /*public function verifyNewUser() {
         
         // creating a database connection
-        $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_USER);
+        $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         // if no connection errors (= working database connection)
         if (!$this->db_connection->connect_errno) {

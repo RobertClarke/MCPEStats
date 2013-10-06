@@ -1,5 +1,5 @@
 <?php 
-require_once(__DIR__.'/../global.inc.php');
+include 'global.inc.php';
 include 'header.php';
 ?>
 

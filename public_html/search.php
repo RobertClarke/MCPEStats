@@ -73,8 +73,8 @@ function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $c
 	include("login/views/logged_in.php");
 }
 
-require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
-mysqli_select_db($connect, DB_NAME);
+$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
+mysqli_select_db($connect, "mcpestat_MCPE");
 
 $query = strip_tags($_POST['query']);
 $query = preg_replace('/\s\s+/', ' ', $query);

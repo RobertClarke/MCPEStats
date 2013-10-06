@@ -7,9 +7,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="Lang" content="en">
-  
+  <meta name="verifyownership" content="fd5c9069ea667f2d5d8e3f0ee7284055" />  
+
   <title><?php echo ($title ? $title : 'Minecraft PE Servers | MCPE Server List'); ?></title>
-  <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends.'); ?>">
+  <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
   <meta name="keywords" content="minecraft pe servers, mcpe servers, mcpe server list, minecraft pe server list">
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="/stylesheets/foundation.min.css">
@@ -83,15 +84,18 @@
 
     <div class="three columns sidecontainer">
       <div class="row  box logo"> 
-
-        <a href="/">
-		<img src="/images/logo.png"/>
-		</a>
-		<hr/>
-		<a href="http://minecraftservers.com/">
-		<img src="http://minecraftservers.com/images/logo.png"/>
-		</a>
-		<a class="togglelogos"></a>
+      <a href="http://mcpestats.com">
+        <img src="/images/logos/mcpestats.png" alt="Minecraft PE Servers"/>
+      </a>
+    <hr/>
+      <a href="http://mcpeservers.com">
+        <img src="/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
+      </a>
+    <hr/>
+      <a href="http://craftstats.com">
+        <img src="/images/logos/craftstats.png" alt="Minecraft Servers"/>
+      </a>
+    <a class="togglelogos"></a>
       </div>
     </div>
 	<div class="nine columns content">
@@ -139,7 +143,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <div class="twelve columns">
 <div class="twelve columns main feat">
 <h1>Minecraft PE Servers</h1>
-<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. <br/><b>Check out the new Minecraft PE hosting, and <a href="http://servercrate.com/mcpe">start your own server with PocketMine today!</a></b></p>
+<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for regular <a href="http://craftstats.com">Minecraft Servers?</a><br/><b>Check out the new Minecraft PE hosting, and <a href="http://servercrate.com/mcpe">start your own server with PocketMine today!</a></b></p>
 </div>
 </div>
 </div>

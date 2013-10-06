@@ -1,8 +1,8 @@
 		</div>
 		<footer>
-			<p class="pull-right">Powered by <a href="http://craftstats.com">CraftStats</a> <?php include 'build.php'; ?></p>
+			<p class="pull-right">Powered by <a href="http://craftstats.com">CraftStats</a></p>
 
-	<p>Run by <a href="http://robertclarke.com">Robert Clarke</a>, contact for any assistance.</a></p>
+	<p>A <a href="http://cubemotion.com">CubeMotion</a> website.</p>
 		</footer>
 	</div>
 </div>

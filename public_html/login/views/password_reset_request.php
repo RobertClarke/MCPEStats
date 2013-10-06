@@ -2,7 +2,7 @@
 
 <!-- errors & messages --->
 <?php 
-require_once(__DIR__.'../global.inc.php');
+require_once(__DIR__.'/../global.inc.php');
 include 'header.php';
 ?>
         

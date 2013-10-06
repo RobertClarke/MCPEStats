@@ -15,7 +15,7 @@ $id = preg_replace('/\s\s+/', ' ', $id);
 
 $Timer = MicroTime( true ); 
 
-require_once(__DIR__.'../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
+require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
 mysqli_select_db($connect, "mcpestat_MCPE");
 
 $id = mysqli_real_escape_string($connect, $id);

@@ -13,7 +13,7 @@ if ($login->isUserLoggedIn() != true) {
 
 $Timer = MicroTime( true ); 
 
-require_once(__DIR__.'../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
+require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
 mysqli_select_db($connect, "mcpestat_MCPE");
 
 $stmt = mysqli_prepare($connect, "SELECT IP, WhetherWhitelisted, WhitelistedPlayers, Port, Name FROM ServerList1 WHERE id=? AND Owner=? LIMIT 0,1");

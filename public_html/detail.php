@@ -1,12 +1,12 @@
 <?php 
 
-require_once(__DIR__.'../global.inc.php');
+require_once(__DIR__.'/../global.inc.php');
 
 
 if(!(isset($_GET['id'])))
 	exit();
 
-require_once(__DIR__.'../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
+require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
 mysqli_select_db($connect, "mcpestat_MCPE");
 
 $id = strip_tags($_GET['id']);

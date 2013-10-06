@@ -1,5 +1,5 @@
 <?
-require_once(__DIR__.'../global.inc.php');
+require_once(__DIR__.'/../global.inc.php');
 require __DIR__ . '/insert.class.php';
 $login = new Login();
 

@@ -48,8 +48,8 @@ function is_html($string)
 include("login/views/logged_in.php");
 }
 
-require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_NAME, DB_PASS);
-mysqli_select_db($connect, "mcpestat_MCPE");
+require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
+mysqli_select_db($connect, DB_NAME);
 
 $id = strip_tags($_GET['id']);
 $id = preg_replace('/\s\s+/', ' ', $id);

@@ -11,8 +11,8 @@ function verifySoftware($software)
 
 function addIP($ip, $port = "19132", $username, $whitelist)
 {
-	$connect = mysqli_connect(DB_NAME, DB_HOST, DB_PASS);
-	mysqli_select_db($connect, "mcpestat_MCPE");
+	$connect = mysqli_connect(DB_USER, DB_HOST, DB_PASS);
+	mysqli_select_db($connect, DB_NAME);
 
 	$ip = strip_tags($ip);
 	$ip = preg_replace('/\s\s+/', ' ', $ip);

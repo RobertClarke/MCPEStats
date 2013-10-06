@@ -9,4 +9,5 @@
 
 define("DB_HOST", "localhost");
 define("DB_PASS", "q^6e?A;F?C@+");
+define("DB_USER", "mcpestat_MCPE");
 define("DB_NAME", "mcpestat_MCPE");

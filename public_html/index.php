@@ -1,6 +1,6 @@
 <?php
+//include(__DIR__.'/../global.inc.php');
 include 'header.php';
-require_once(__DIR__.'/../global.inc.php');
 
 if($_GET['delete']){
 	require_once(__DIR__.'/../constants.php'); $connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS);

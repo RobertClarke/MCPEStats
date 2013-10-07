@@ -1,5 +1,5 @@
 <?
-include $_SERVER['DOCUMENT_ROOT'].'/../global.inc.php';;
+require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
 require __DIR__ . '/insert.class.php';
 $login = new Login();
 

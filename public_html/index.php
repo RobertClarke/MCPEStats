@@ -43,7 +43,45 @@ $result = mysqli_query($connect, $query);
 <?
 //shuffle($data);
 
-	
+//For some reason this needs to go below the table statement. Weird.
+if(isset($_GET['serveradded']) and $_GET['serveradded'] == 'true')
+{
+	echo'
+<div class="alert alert-success">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Success!</strong> You have successfully added the server. Make sure you change the hostname / plugins back to normal! Please allow upto 5 minutes for the list to refresh itself.
+</div>
+';
+}
+if(isset($_GET['serveradded']) and $_GET['serveradded'] != 'true')
+{
+	echo'
+		<div class="alert alert-error">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Error!</strong> '.urldecode($_GET['serveradded']).'
+</div>
+';
+}
+
+if ($login->errors) {
+	foreach ($login->errors as $error) {
+		echo "<div class='alert alert-error'>
+  <a class='close' data-dismiss='alert'>×</a>
+  <strong>Error!</strong> $error
+</div>";
+	}
+}
+
+// show positive messages
+if ($login->messages) {
+	foreach ($login->messages as $message) {
+		echo "<div class='alert alert-success'>
+  <a class='close' data-dismiss='alert'>×</a>
+  <strong>Success!</strong> $message
+</div>";
+	}
+}
+
 $servers = array();
 $connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
 mysqli_select_db($connect, DB_NAME);
@@ -116,44 +154,6 @@ mysqli_close($connect);
 
 
 /*include($_SERVER['DOCUMENT_ROOT']."/blog.php");*/
-
-if(isset($_GET['serveradded']) and $_GET['serveradded'] == 'true')
-			{
-echo'
-<div class="alert alert-success">  
-  <a class="close" data-dismiss="alert">×</a>  
-  <strong>Success!</strong> You have successfully added the server. Make sure you change the hostname / plugins back to normal! Please allow upto 5 minutes for the list to refresh itself.
-</div>  
-';
-}
-if(isset($_GET['serveradded']) and $_GET['serveradded'] != 'true')
-{
-	echo'
-		<div class="alert alert-error">  
-  <a class="close" data-dismiss="alert">×</a>  
-  <strong>Error!</strong> '.urldecode($_GET['serveradded']).'
-</div>  
-';
-}
-
-if ($login->errors) {
-    foreach ($login->errors as $error) {
-        echo "<div class='alert alert-error'>  
-  <a class='close' data-dismiss='alert'>×</a>  
-  <strong>Error!</strong> $error
-</div>";    
-    }
-}
-
-// show positive messages
-if ($login->messages) {
-    foreach ($login->messages as $message) {
-        echo "<div class='alert alert-success'>  
-  <a class='close' data-dismiss='alert'>×</a>  
-  <strong>Success!</strong> $message
-</div>";    
-    }
-}
 ?>
 </tbody>
 </table>

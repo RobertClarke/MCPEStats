@@ -3,7 +3,7 @@
 <!-- errors & messages --->
 <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/../global.inc.php';;
-include 'header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/header.php';
 ?>
         
 <div class="six columns centered">

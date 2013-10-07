@@ -1,6 +1,6 @@
 <?php 
 include '../../global.inc.php';
-include 'header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/header.php';
 ?>
 
 		<?$Timer = MicroTime( true ); 

@@ -10,8 +10,8 @@ $params = explode("/", $location);
 
 $command = $params[3];//Params starts from 1(api) 2(v2) 3(command)
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
-mysqli_select_db($connect, "mcpestat_MCPE");
+$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
+mysqli_select_db($connect, DB_NAME);
 
 function getFakePlayerList($count, $online)
 {

@@ -1,5 +1,5 @@
 <?php 
-include 'global.inc.php';
+include $_SERVER['DOCUMENT_ROOT'].'/../global.inc.php';;
 include 'header.php';
 ?>
 

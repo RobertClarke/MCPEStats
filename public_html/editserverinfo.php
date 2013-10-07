@@ -3,6 +3,7 @@
 require_once("login/config/db.php");
 require_once("login/config/hashing.php");
 require_once("login/classes/Login.php");
+require_once('constants.php');
 $login = new Login();
 
 if ($login->isUserLoggedIn() != true) {
@@ -15,8 +16,8 @@ $id = preg_replace('/\s\s+/', ' ', $id);
 
 $Timer = MicroTime( true ); 
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
-mysqli_select_db($connect, "mcpestat_MCPE");
+$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
+mysqli_select_db($connect, DB_NAME);
 
 $id = mysqli_real_escape_string($connect, $id);
 

@@ -1,9 +1,11 @@
 <?
 
+require_once('constants.php');
+
 function addIP($ip, $port = "19132", $username, $whitelist)
 {
-	$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
-	mysqli_select_db($connect, "mcpestat_MCPE");
+	$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
+	mysqli_select_db($connect, DB_NAME);
 
 	$ip = strip_tags($ip);
 	$ip = preg_replace('/\s\s+/', ' ', $ip);

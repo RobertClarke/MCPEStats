@@ -4,6 +4,7 @@
 require_once("login/config/db.php");
 require_once("login/config/hashing.php");
 require_once("login/classes/Login.php");
+require_once('constants.php');
 $login = new Login();
 
 	
@@ -48,8 +49,8 @@ function is_html($string)
 include("login/views/logged_in.php");
 }
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
-mysqli_select_db($connect, "mcpestat_MCPE");
+$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
+mysqli_select_db($connect, DB_NAME);
 
 $id = strip_tags($_GET['id']);
 $id = preg_replace('/\s\s+/', ' ', $id);

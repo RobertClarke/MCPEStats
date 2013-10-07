@@ -3,6 +3,7 @@
 require_once("login/config/db.php");
 require_once("login/config/hashing.php");
 require_once("login/classes/Login.php");
+require_once('constants.php');
 $login = new Login();
 
 if ($login->isUserLoggedIn() != true) {
@@ -13,8 +14,8 @@ if ($login->isUserLoggedIn() != true) {
 
 $Timer = MicroTime( true ); 
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
-mysqli_select_db($connect, "mcpestat_MCPE");
+$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
+mysqli_select_db($connect, DB_NAME);
 
 $stmt = mysqli_prepare($connect, "SELECT IP, WhetherWhitelisted, WhitelistedPlayers, Port, Name FROM ServerList1 WHERE id=? AND Owner=? LIMIT 0,1");
 mysqli_stmt_bind_param($stmt, "ds", $_GET['id'], $_SESSION['user_name']);

@@ -1,18 +1,9 @@
 <?
-require_once(__DIR__.'/../constants.php');
-
-function verifySoftware($software)
-{
-	if(strpos($software, "PocketMine-MP") !== false)
-		return true;
-	else
-		return false;
-}
 
 function addIP($ip, $port = "19132", $username, $whitelist)
 {
-	$connect = mysqli_connect(DB_USER, DB_HOST, DB_PASS);
-	mysqli_select_db($connect, DB_NAME);
+	$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+");
+	mysqli_select_db($connect, "mcpestat_MCPE");
 
 	$ip = strip_tags($ip);
 	$ip = preg_replace('/\s\s+/', ' ', $ip);
@@ -54,7 +45,7 @@ function addIP($ip, $port = "19132", $username, $whitelist)
 			return "Failed to verify the server. Is the server online? IP:".$ip.":".$port;
 		}
 		$Info = $Query->GetInfo( );
-		if($Info !== false and verifySoftware($Info['Software']) === true)
+		if($Info !== false)
 		{
 			if($Info['HostName'] == "MCPEListClaimServer" or in_array("MCPEListClaimServer 1.0.0", $Info['Plugins']) or $Info['Plugins'] == "MCPEListClaimServer 1.0.0")
 			{

@@ -2,7 +2,7 @@
 
 <!-- errors & messages --->
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/../global.inc.php';;
+require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
 include $_SERVER['DOCUMENT_ROOT'].'/header.php';
 ?>
         

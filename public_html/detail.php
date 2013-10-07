@@ -1,6 +1,6 @@
 <?php 
 
-include $_SERVER['DOCUMENT_ROOT'].'/../global.inc.php';
+require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
 require_once('constants.php');
 
 

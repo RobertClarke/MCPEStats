@@ -29,7 +29,7 @@ mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
 
 if($IP == 0)
-	header( 'Location: http://mcpe-list.sekjun9878.info/manage.php?serveractionr='."Wrong ID or Bad Ownership") ;
+	header( 'Location: http://mcpestats.com/manage.php?serveractionr='."Wrong ID or Bad Ownership") ;
 
 ?>
 

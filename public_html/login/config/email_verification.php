@@ -9,8 +9,8 @@
  */
 
 /** absolute URL to register.php, necessary for email verification links */
-define("EMAIL_VERIFICATION_URL", "http://mcpe-list.sekjun9878.info/login/register.php");
+define("EMAIL_VERIFICATION_URL", "http://mcpestats.com/login/register.php");
 
-define("EMAIL_VERIFICATION_FROM", "noreply@mcpe-list.sekjun9878.info");
-define("EMAIL_VERIFICATION_SUBJECT", "Account Activation for MCPE Server List");
+define("EMAIL_VERIFICATION_FROM", "noreply@mcpestats.com");
+define("EMAIL_VERIFICATION_SUBJECT", "Account Activation for MCPEStats");
 define("EMAIL_VERIFICATION_CONTENT", "Please click on this link to activate your account:");

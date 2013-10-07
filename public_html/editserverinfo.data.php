@@ -63,11 +63,11 @@ if(isset($_POST['description']))
 	$data = setDescription($_POST['id'], $_POST['description'], $connect);
 	if($data === true)
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/editserverinfo.php?id=".$_POST['id']."&editaction=true");
+		header("Location: /editserverinfo.php?id=".$_POST['id']."&editaction=true");
 	}
 	else
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/editserverinfo.php?id=".$_POST['id']."&whitelistaction=".$data);
+		header("Location: /editserverinfo.php?id=".$_POST['id']."&whitelistaction=".$data);
 	}
 }
 if(isset($_POST['serverrules']))
@@ -75,11 +75,11 @@ if(isset($_POST['serverrules']))
 	$data = setServerRules($_POST['id'], $_POST['serverrules'], $connect);
 	if($data === true)
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/editserverinfo.php?id=".$_POST['id']."&editaction=true");
+		header("Location: /editserverinfo.php?id=".$_POST['id']."&editaction=true");
 	}
 	else
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/editserverinfo.php?id=".$_POST['id']."&editaction=".$data);
+		header("Location: /editserverinfo.php?id=".$_POST['id']."&editaction=".$data);
 	}
 }
 

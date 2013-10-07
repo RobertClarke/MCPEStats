@@ -26,24 +26,7 @@ if($result['Owner'] == $_SESSION['user_name']){
 $result = mysqli_query($connect, $query);
 }
 }
-?>
 
-<table class="table table-striped table-condensed">
-	  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Owner</th>
-          <th>Whitelist</th>
-          <th>Server IP</th>
-          <th>Players</th>
-          <th>Status</th>                                         
-      </tr>
-  </thead>   
-  <tbody>
-<?
-//shuffle($data);
-
-//For some reason this needs to go below the table statement. Weird.
 if(isset($_GET['serveradded']) and $_GET['serveradded'] == 'true')
 {
 	echo'
@@ -81,6 +64,24 @@ if ($login->messages) {
 </div>";
 	}
 }
+?>
+
+<table class="table table-striped table-condensed">
+	  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Owner</th>
+          <th>Whitelist</th>
+          <th>Server IP</th>
+          <th>Players</th>
+          <th>Status</th>                                         
+      </tr>
+  </thead>   
+  <tbody>
+<?
+//shuffle($data);
+
+//For some reason this needs to go below the table statement. Weird.
 
 $servers = array();
 $connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);

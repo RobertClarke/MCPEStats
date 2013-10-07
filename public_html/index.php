@@ -99,6 +99,16 @@ foreach($servers as $row){
 	continue;
 	}
 	$i++;
+	if($i == ($pagemin + 10))
+	{
+		?>
+			</tbody>
+			</table>
+			dddddddddddd
+			<table class="table table-striped table-condensed">
+			<tbody>
+		<?php
+	}
 	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
 }
 mysqli_close($connect);

@@ -3,6 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
 include 'header.php';
 require_once('constants.php');
 
+
 function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $id)
 {
 	echo "<tr>";

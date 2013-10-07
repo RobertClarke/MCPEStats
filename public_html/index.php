@@ -143,7 +143,7 @@ foreach($servers as $row){
 		?>
 			</tbody>
 			</table>
-			dddddddddddd
+			<!--AD CODE HERE-->
 			<table class="table table-striped table-condensed">
 			<tbody>
 		<?php

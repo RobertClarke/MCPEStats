@@ -122,11 +122,11 @@ if(isset($_POST['AddUserName']))
 	$data = addUsername($_POST['id'], $_POST['AddUserName'], $connect);
 	if($data === true)
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&whitelistaction=true&action=admin");
+		header("Location: /whitelist.php?id=".$_POST['id']."&whitelistaction=true&action=admin");
 	}
 	else
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&whitelistaction=".$data."&action=admin");
+		header("Location: /whitelist.php?id=".$_POST['id']."&whitelistaction=".$data."&action=admin");
 	}
 }
 else if(isset($_POST['RemoveUserName']))
@@ -134,11 +134,11 @@ else if(isset($_POST['RemoveUserName']))
 	$data = removeUsername($_POST['id'], $_POST['RemoveUserName'], $connect);
 	if($data === true)
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&whitelistaction=true&action=admin");
+		header("Location: /whitelist.php?id=".$_POST['id']."&whitelistaction=true&action=admin");
 	}
 	else
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&whitelistaction=".$data."&action=admin");
+		header("Location: /whitelist.php?id=".$_POST['id']."&whitelistaction=".$data."&action=admin");
 	}
 }
 else if(isset($_POST['ToggleWhiteList']))
@@ -146,11 +146,11 @@ else if(isset($_POST['ToggleWhiteList']))
 	$data = toggleWhiteList($_POST['id'], $connect);
 	if($data === true)
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&whitelistaction=true&action=admin");
+		header("Location: /whitelist.php?id=".$_POST['id']."&whitelistaction=true&action=admin");
 	}
 	else
 	{
-		header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&whitelistaction=".$data."&action=admin");
+		header("Location: /whitelist.php?id=".$_POST['id']."&whitelistaction=".$data."&action=admin");
 	}
 }
 

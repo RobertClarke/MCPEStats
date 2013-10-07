@@ -12,5 +12,5 @@
 define("EMAIL_PASSWORDRESET_URL", "http://mcpestats.com/login/password_reset.php");
 
 define("EMAIL_PASSWORDRESET_FROM", "noreply@mcpestats.com");
-define("EMAIL_PASSWORDRESET_SUBJECT", "Password reset for MCPE Server List");
+define("EMAIL_PASSWORDRESET_SUBJECT", "Password reset for MCPEStats");
 define("EMAIL_PASSWORDRESET_CONTENT", "Please click on this link to reset your password:");

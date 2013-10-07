@@ -4,6 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/login/libraries/password_compatibility_
 require_once($_SERVER['DOCUMENT_ROOT']."/login/config/db.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/login/config/hashing.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/login/classes/Login.php");
+require_once($_SERVER['DOCUMENT_ROOT'].'/constants.php');
 
 $login = new Login();
 $Timer = MicroTime( true ); 
@@ -92,8 +93,8 @@ switch($_POST['doserveraction'])
 
 function removeServer($Owner, $IP, $Port, $login, $id)
 {
-	$connect = mysqli_connect("localhost","mcpestat_MCPE","J4gVuBfXSf7QwpJrEeYdR2AH");
-	mysqli_select_db($connect, "mcpestat_MCPE");
+	$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
+	mysqli_select_db($connect, DB_NAME);
 	
 	$Owner = mysqli_real_escape_string($connect, $Owner);
 	$id = mysqli_real_escape_string($connect, $id);

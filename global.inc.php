@@ -185,6 +185,6 @@ The Minecraft PE Server List Team.
 	}
 }
 
-require 'MinecraftQuery.class.php';
+require $_SERVER['DOCUMENT_ROOT'].'/MinecraftQuery.class.php';
 $Query = new MinecraftQuery( );
 ?>

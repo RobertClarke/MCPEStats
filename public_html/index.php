@@ -143,7 +143,19 @@ foreach($servers as $row){
 		?>
 			</tbody>
 			</table>
-			<!--AD CODE HERE-->
+			<center><div style="padding-bottom:20px;align:center;">
+			<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8782622759360356";
+/* MCPE Lower Header */
+google_ad_slot = "9230117039";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div></center>
 			<table class="table table-striped table-condensed">
 			<tbody>
 		<?php

@@ -3,6 +3,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
 include 'header.php';
 require_once('constants.php');
 
+if ($login->isUserLoggedIn() != true) {
+	include("login/views/not_logged_in.php");
+	exit();
+}
+
 
 function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $id)
 {

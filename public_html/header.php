@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width" />
+  <!--<meta name="viewport" content="width=device-width" />-->
   <meta http-equiv="Lang" content="en">
   <meta name="verifyownership" content="fd5c9069ea667f2d5d8e3f0ee7284055" />  
 

@@ -36,7 +36,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
           echo "<input type='hidden' name='id' id='id' value='$id' />";
           echo "<input type='hidden' name='IP' id='IP' value='$ip' />";
           echo "<input type='hidden' name='Port' id='Port' value='$port' />";
-          echo "<button title='Remove Server' class='btn btn-small btn-danger'>Remove</button></th>";
+          echo "<button title='Remove Server' class='btn btn-mini btn-danger'>Remove</button></th>";
           echo "</form>"; 
           
           echo "<th><form name='input' action='manage.data.php' method='post'>";
@@ -45,7 +45,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
           echo "<input type='hidden' name='id' id='id' value='$id' />";
           echo "<input type='hidden' name='IP' id='IP' value='$ip' />";
           echo "<input type='hidden' name='Port' id='Port' value='$port' />";
-          echo "<button title='Edit Server Info' class='btn btn-small btn-success'>Edit</button></th>";
+          echo "<button title='Edit Server Info' class='btn btn-mini btn-success'>Edit</button></th>";
           echo "</form>"; 
           
           echo "<th><form name='input' action='manage.data.php' method='post'>";
@@ -54,7 +54,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
           echo "<input type='hidden' name='id' id='id' value='$id' />";
           echo "<input type='hidden' name='IP' id='IP' value='$ip' />";
           echo "<input type='hidden' name='Port' id='Port' value='$port' />";
-          echo "<button title='Manage Whitelist' class='btn btn-small btn-success'>Whitelist</button></th>";
+          echo "<button title='Manage Whitelist' class='btn btn-mini btn-success'>Whitelist</button></th>";
           echo "</form>"; 
                                          
       echo "</tr>";

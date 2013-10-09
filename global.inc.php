@@ -55,6 +55,10 @@ function alert($string)
 
 
 if($_POST['doserveraction']){
+	if ($login->isUserLoggedIn() != true) {
+		include($_SERVER['DOCUMENT_ROOT']."/login/views/not_logged_in.php");
+		exit();
+	}
 switch($_POST['doserveraction'])
 {
 	case 'remove':

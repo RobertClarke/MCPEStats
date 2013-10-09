@@ -55,6 +55,10 @@ function alert($string)
 
 
 if($_POST['doserveraction']){
+	if ($login->isUserLoggedIn() != true) {
+		include($_SERVER['DOCUMENT_ROOT']."/login/views/not_logged_in.php");
+		exit();
+	}
 switch($_POST['doserveraction'])
 {
 	case 'remove':
@@ -124,7 +128,7 @@ function removeServer($Owner, $IP, $Port, $login, $id)
 	
 	if($result)
 	{
-		if(in_array($_SESSION['user_name'], $login->moderators) === true)
+		/*if(in_array($_SESSION['user_name'], $login->moderators) === true)
 		{
 			$stmt = mysqli_prepare($connect, "SELECT user_email FROM users WHERE user_name=? LIMIT 0,1");
 			mysqli_stmt_bind_param($stmt, "s", $realOwner);
@@ -176,7 +180,7 @@ The Minecraft PE Server List Team.
 
 			$headers = "From:" . $from;
 			mail($to,$subject,$message,$headers);
-		}
+		}*/
 		
 		return true;
 	}

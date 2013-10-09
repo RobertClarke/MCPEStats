@@ -3,6 +3,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
 include 'header.php';
 require_once('constants.php');
 
+if ($login->isUserLoggedIn() != true) {
+	include("login/views/not_logged_in.php");
+	exit();
+}
+
 
 function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $id)
 {
@@ -16,7 +21,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
         
         echo "
           <th>$ip:$port</th>
-          <th>$players/$maxplayers</th><th>";
+			<th>";
           if($onlinestatus == "Online")
           	echo '<span class="label label-success">';
           else if($onlinestatus == "Offline")
@@ -31,7 +36,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
           echo "<input type='hidden' name='id' id='id' value='$id' />";
           echo "<input type='hidden' name='IP' id='IP' value='$ip' />";
           echo "<input type='hidden' name='Port' id='Port' value='$port' />";
-          echo "<button title='Remove Server' class='btn btn-danger'></button></th>";
+          echo "<button title='Remove Server' class='btn btn-mini btn-danger'>Remove</button></th>";
           echo "</form>"; 
           
           echo "<th><form name='input' action='manage.data.php' method='post'>";
@@ -40,7 +45,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
           echo "<input type='hidden' name='id' id='id' value='$id' />";
           echo "<input type='hidden' name='IP' id='IP' value='$ip' />";
           echo "<input type='hidden' name='Port' id='Port' value='$port' />";
-          echo "<button title='Edit Server Info' class='btn btn-success'></button></th>";
+          echo "<button title='Edit Server Info' class='btn btn-mini btn-success'>Edit</button></th>";
           echo "</form>"; 
           
           echo "<th><form name='input' action='manage.data.php' method='post'>";
@@ -49,7 +54,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
           echo "<input type='hidden' name='id' id='id' value='$id' />";
           echo "<input type='hidden' name='IP' id='IP' value='$ip' />";
           echo "<input type='hidden' name='Port' id='Port' value='$port' />";
-          echo "<button title='Manage Whitelist' class='btn btn-success'></button></th>";
+          echo "<button title='Manage Whitelist' class='btn btn-mini btn-success'>Whitelist</button></th>";
           echo "</form>"; 
                                          
       echo "</tr>";
@@ -59,15 +64,36 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
 
 ?>
 <h2>Manage your servers</h2>
+<?
+if($_GET['serveractionr'] == 'true')
+{
+	echo'
+				<div class="alert alert-success">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Success!</strong> You have successfully removed the server.
+</div>
+';
+}
+if(isset($_GET['serveractionr']) and $_GET['serveractionr'] != 'true')
+{
+	echo'
+		<div class="alert alert-error">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Error!</strong> '.htmlspecialchars($_GET['serveractionr']).'
+</div>
+';
+}
+?>
 <table class="table table-striped table-condensed">
 	  <thead>
       <tr>
           <th>Name</th>
           <th>Owner</th>
           <th>Server IP : Port</th>
-          <th>Players / MaxPlayers</th>
           <th>Status</th>         
-          <th>Actions</th>                                  
+          <th>Actions</th>
+	      <th></th>
+	      <th></th>
       </tr>
   </thead>   
   <tbody>
@@ -105,24 +131,6 @@ mysqli_close($connect);
 </tbody>
 </table>
 <?php
-if($_GET['serveractionr'] == 'true')
-			{
-				echo'
-				<div class="alert alert-success">  
-  <a class="close" data-dismiss="alert">×</a>  
-  <strong>Success!</strong> You have successfully removed the server.
-</div>  
-';
-}
-if(isset($_GET['serveractionr']) and $_GET['serveractionr'] != 'true')
-{
-	echo'
-		<div class="alert alert-error">  
-  <a class="close" data-dismiss="alert">×</a>  
-  <strong>Error!</strong> '.htmlspecialchars($_GET['serveractionr']).'
-</div>  
-';
-}
 
 include 'footer.php';
 ?>

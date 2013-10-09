@@ -64,6 +64,26 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
 
 ?>
 <h2>Manage your servers</h2>
+<?
+if($_GET['serveractionr'] == 'true')
+{
+	echo'
+				<div class="alert alert-success">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Success!</strong> You have successfully removed the server.
+</div>
+';
+}
+if(isset($_GET['serveractionr']) and $_GET['serveractionr'] != 'true')
+{
+	echo'
+		<div class="alert alert-error">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Error!</strong> '.htmlspecialchars($_GET['serveractionr']).'
+</div>
+';
+}
+?>
 <table class="table table-striped table-condensed">
 	  <thead>
       <tr>
@@ -110,24 +130,6 @@ mysqli_close($connect);
 </tbody>
 </table>
 <?php
-if($_GET['serveractionr'] == 'true')
-			{
-				echo'
-				<div class="alert alert-success">  
-  <a class="close" data-dismiss="alert">×</a>  
-  <strong>Success!</strong> You have successfully removed the server.
-</div>  
-';
-}
-if(isset($_GET['serveractionr']) and $_GET['serveractionr'] != 'true')
-{
-	echo'
-		<div class="alert alert-error">  
-  <a class="close" data-dismiss="alert">×</a>  
-  <strong>Error!</strong> '.htmlspecialchars($_GET['serveractionr']).'
-</div>  
-';
-}
 
 include 'footer.php';
 ?>

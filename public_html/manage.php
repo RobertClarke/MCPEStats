@@ -91,7 +91,9 @@ if(isset($_GET['serveractionr']) and $_GET['serveractionr'] != 'true')
           <th>Owner</th>
           <th>Server IP : Port</th>
           <th>Status</th>         
-          <th>Actions</th>                                  
+          <th>Actions</th>
+	      <th></th>
+	      <th></th>
       </tr>
   </thead>   
   <tbody>

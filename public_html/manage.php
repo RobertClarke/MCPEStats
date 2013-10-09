@@ -20,8 +20,7 @@ function display_r_t2($name, $ip, $players, $maxplayers, $onlinestatus, $port, $
         echo "<th>$customname</th>";
         
         echo "
-          <th>$ip:$port</th>
-          <th>$players/$maxplayers</th><th>";
+          <th>$ip:$port</th>";
           if($onlinestatus == "Online")
           	echo '<span class="label label-success">';
           else if($onlinestatus == "Offline")
@@ -90,7 +89,6 @@ if(isset($_GET['serveractionr']) and $_GET['serveractionr'] != 'true')
           <th>Name</th>
           <th>Owner</th>
           <th>Server IP : Port</th>
-          <th>Players / MaxPlayers</th>
           <th>Status</th>         
           <th>Actions</th>                                  
       </tr>

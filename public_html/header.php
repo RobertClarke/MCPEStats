@@ -9,7 +9,7 @@
   <meta http-equiv="Lang" content="en">
   <meta name="verifyownership" content="fd5c9069ea667f2d5d8e3f0ee7284055" />  
 
-  <title><?php echo ($title ? $title : 'Minecraft PE Servers | MCPE Server List'); ?></title>
+  <title><?php echo ($title ? $title : 'Minecraft PE Servers | Minecraft PE Server List'); ?></title>
   <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
   <meta name="keywords" content="minecraft pe servers, mcpe servers, mcpe server list, minecraft pe server list">
   <!-- Included CSS Files (Compressed) -->
@@ -113,7 +113,7 @@
                   <a href="/insert.php">add server</a>
                 </li>
                 <li>
-                  <a href="http://craftstats.com">craftstats</a>
+                  <a href="http://craftstats.com">minecraft servers</a>
                 </li>
                 <li>
                   <a href="https://servercrate.com/mcpe.php">start a server</a>

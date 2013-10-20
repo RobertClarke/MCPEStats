@@ -64,6 +64,7 @@
 
 </script>
 
+<!-- Site online -->
 </head>
 
 <body>

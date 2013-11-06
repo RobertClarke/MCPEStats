@@ -27,7 +27,7 @@ $desc = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. 
 $title = $result['Name'].' - Minecraft PE Server';
 include 'header.php';
 ?>
-    <?
+    <?php
    
 
 
@@ -52,11 +52,11 @@ catch( MinecraftQueryException $e )
 			If you are getting this error, the id variable probably isn't valid.</div>
 			
 		<footer>
-		<? include($_SERVER['DOCUMENT_ROOT'].'/footer.php'); ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/footer.php'); ?>
 		</footer>
 	</div>
 </div>
-</body></html><?
+</body></html><?php
 
 		exit();
 		}
@@ -79,7 +79,7 @@ catch( MinecraftQueryException $e )
 			}
 		}
 		?>
-<h2><? echo htmlspecialchars($result['Name']); ?></h2>
+<h2><?php echo htmlspecialchars($result['Name']); ?></h2>
 
 <div class='row-fluid'>
 <div class='span6'>
@@ -87,32 +87,32 @@ catch( MinecraftQueryException $e )
 <dl class="dl-horizontal">
 <div class='centered-text'><h5>Basic Server Info</h5></div>
   <dt>Server Name</dt>
-  <dd><? echo htmlspecialchars($result['Name']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Name']); ?></dd>
   <dt>Server IP</dt>
-  <dd><? echo htmlspecialchars($result['IP']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['IP']); ?></dd>
   <dt>Server Port</dt>
-  <dd><? echo htmlspecialchars($result['Port']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Port']); ?></dd>
   <dt>Owner</dt>
-  <dd><? echo htmlspecialchars($result['Owner']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Owner']); ?></dd>
   <dt>Registration Date</dt>
-  <dd><? echo htmlspecialchars($result['RegisteredDate']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['RegisteredDate']); ?></dd>
   <dt>Map</dt>
-  <dd><? echo htmlspecialchars($Info['Map']); ?></dd>
+  <dd><?php echo htmlspecialchars($Info['Map']); ?></dd>
   <dt>Gamemode</dt>
-  <dd><? echo htmlspecialchars($Info['GameType']); ?></dd>
+  <dd><?php echo htmlspecialchars($Info['GameType']); ?></dd>
   <dt>Version</dt>
-  <dd><? echo htmlspecialchars($Info['Version']); ?></dd>
+  <dd><?php echo htmlspecialchars($Info['Version']); ?></dd>
   <dt>Software</dt>
-  <dd><? echo htmlspecialchars($Info['Software']); ?></dd>
+  <dd><?php echo htmlspecialchars($Info['Software']); ?></dd>
   <dt>Whitelist</dt>
-  <dd><? echo parseWhitelist($result['WhetherWhitelisted']); ?></dd>
+  <dd><?php echo parseWhitelist($result['WhetherWhitelisted']); ?></dd>
 </dl>
 </div>
 <br><br>
 <div class='thumbnail'>
 <div class='row-fluid'>
 <div class='centered-text span6'><h5>Plugins</h5>
-  <?
+  <?php
   foreach($Info['Plugins'] as $p)
   {
   	echo htmlspecialchars($p)."<br>";
@@ -137,14 +137,14 @@ catch( MinecraftQueryException $e )
 <div class='thumbnail'>
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">
-  <? echo $result['Description']; ?>
+  <?php echo $result['Description']; ?>
   </p>
 </div>
 <br><br>
 <div class='thumbnail'>
 <div class='centered-text'><h5>Server Rules</h5></div>
   <p style="padding:0 19px">
-  <? echo $result['ServerRules']; ?>
+  <?php echo $result['ServerRules']; ?>
   </p>
 </div>
 <br><br>
@@ -152,12 +152,12 @@ catch( MinecraftQueryException $e )
 <table class='table table-bordered table-striped'>
 <thead>
 <tr>
-	<th>Players (<? echo htmlspecialchars($Info['Players'])."/".htmlspecialchars($Info['MaxPlayers']); ?>)</th>
+	<th>Players (<?php echo htmlspecialchars($Info['Players'])."/".htmlspecialchars($Info['MaxPlayers']); ?>)</th>
 </tr>
 </thead>
 <tbody>
 
-<?
+<?php
 $re = 0;
 foreach($Players as $p)
 {

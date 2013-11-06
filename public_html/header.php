@@ -93,8 +93,8 @@
         <img src="/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
       </a>
     <hr/>
-      <a href="http://craftstats.com">
-        <img src="/images/logos/craftstats.png" alt="Minecraft Servers"/>
+      <a href="http://minecraft.serverlister.com/">
+        <img src="/images/logos/craftstats.png" alt="ServerLister"/>
       </a>
     <a class="togglelogos"></a>
       </div>
@@ -112,9 +112,6 @@
               <ul class="left">
                 <li>
                   <a href="/insert.php">add server</a>
-                </li>
-                <li>
-                  <a href="http://craftstats.com">minecraft servers</a>
                 </li>
                 <li>
                   <a href="https://servercrate.com/mcpe.php">start a server</a>
@@ -144,7 +141,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <div class="twelve columns">
 <div class="twelve columns main feat">
 <h1>Minecraft PE Servers</h1>
-<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for regular <a href="http://craftstats.com">Minecraft Servers</a>?</p>
+<p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for regular <a href="http://minecraft.serverlister.com/">Minecraft Servers</a>?</p>
 <br/>
 <p><b>Want to start your own Minecraft PE server? Check out this awesome <a href="http://servercrate.com/mcpe">Minecraft PE hosting.</a></p></b>
 </div>

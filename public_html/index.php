@@ -78,7 +78,7 @@ if ($login->messages) {
       </tr>
   </thead>   
   <tbody>
-<?
+<?php
 //shuffle($data);
 
 //For some reason this needs to go below the table statement. Weird.

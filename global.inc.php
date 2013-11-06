@@ -82,15 +82,12 @@ switch($_POST['doserveraction'])
 		break;
 	case 'whitelist':
 		header( 'Location: /manage.php?serveractionr='."WhiteList Not Yet Available. Check back later.") ;
-		//header("Location: http://mcpe-list.sekjun9878.info/whitelist.php?id=".$_POST['id']."&action=admin");
 		break;
 	case 'editserverinfo':
-		//header( 'Location: http://mcpe-list.sekjun9878.info/manage.php?serveractionr='."Server Edit Not Yet Available. Check back later.") ;
 		header("Location: /editserverinfo.php?id=".$_POST['id']);
 		break;
 	default:
 		$data = 'Action Unspecified. You may have been logged for directly accessing critical files.';
-	//	alert('Action Unspecified. You may have been logged for directly accessing critical files.');
 		header( 'Location: /manage.php?serveractionr='.$data) ;
 		break;
 }}

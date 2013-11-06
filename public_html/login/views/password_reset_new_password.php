@@ -34,6 +34,6 @@ if ($login->messages) {
     <input type="submit"  name="submit_new_password" value="Submit new password" />
 </form>
 
-<a href="index.php">Back to Login Page</a>
+<a href="../../index.php">Back to Login Page</a>
 
 <!-- this is the Simple sexy PHP Login Script. You can find it on http://www.php-login.net ! It's free and open source. -->

@@ -62,5 +62,5 @@ if ($login->messages) {
 </div>
 <?php
 
-	include 'footer.php';
+	include '../../footer.php';
 ?>

@@ -80,6 +80,6 @@ if ($registration->messages) {
 <!-- this is the Simple sexy PHP Login Script. You can find it on http://www.php-login.net ! It's free and open source. -->
 <?php
 
-	include 'footer.php';
+	include '../../footer.php';
 ?>
 

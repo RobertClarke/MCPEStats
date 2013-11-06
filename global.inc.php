@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once($_SERVER['DOCUMENT_ROOT']."/login/libraries/password_compatibility_library.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/login/config/db.php");

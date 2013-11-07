@@ -11,7 +11,9 @@
   <title><?php echo ($title ? $title : 'Minecraft PE Servers | Minecraft PE Server List'); ?></title>
   <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
   <meta name="keywords" content="minecraft pe servers, mcpe servers, mcpe server list, minecraft pe server list">
-  <link rel="shortcut icon" href="http://cdn.mcpestats.com/favicon.ico" />
+
+  <link rel="apple-touch-icon" href="http://cdn.mcpestats.com/images/apple-touch-icon.png"/>
+  <link rel="shortcut icon" href="http://cdn.mcpestats.com/images/favicon.ico" />
 
   <link rel="stylesheet" href="http://cdn.mcpestats.com/stylesheets/foundation.min.css">
   <link rel="stylesheet" href="http://cdn.mcpestats.com/stylesheets/app.css">

@@ -67,7 +67,6 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
-  <a class="close" data-dismiss="alert">×</a>
   Be sure to follow our new Twitter account for site updates: <a href="http://twitter.com/mcpestats">@mcpestats</a>
 </div>
 

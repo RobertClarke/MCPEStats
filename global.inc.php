@@ -8,12 +8,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/constants.php');
 
 $login = new Login();
 $Timer = MicroTime( true ); 
-$assetsDir = if($assets == 'local'){
-	echo '/assets';
-}
-else {
-	echo 'http://cdn.mcpestats.com'
-}
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/MinecraftQuery_Simple.php');
 

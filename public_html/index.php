@@ -66,6 +66,10 @@ if ($login->messages) {
 }
 ?>
 
+<div class="alert alert-success">
+  Be sure to follow our new Twitter account for site updates: <a href="http://twitter.com/mcpestats">@mcpestats</a>
+</div>
+
 <table class="table table-striped table-condensed">
 	  <thead>
       <tr>

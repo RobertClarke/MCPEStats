@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
@@ -12,21 +11,20 @@
   <title><?php echo ($title ? $title : 'Minecraft PE Servers | Minecraft PE Server List'); ?></title>
   <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
   <meta name="keywords" content="minecraft pe servers, mcpe servers, mcpe server list, minecraft pe server list">
-  <!-- Included CSS Files (Compressed) -->
+  <link rel="shortcut icon" href="http://cdn.mcpestats.com/favicon.ico" />
+
   <link rel="stylesheet" href="http://cdn.mcpestats.com/stylesheets/foundation.min.css">
   <link rel="stylesheet" href="http://cdn.mcpestats.com/stylesheets/app.css">
+  <link rel="stylesheet" href="http://cdn.mcpestats.com/bootstrap.css">
   <!--[if !IE 7]>
   <style type="text/css">
     #wrap {display:table;height:100%}
   </style>
-<![endif]-->
-	  <!-- Included JS Files (Compressed) -->
+  <![endif]-->
+
   <script src="http://cdn.mcpestats.com/javascripts/jquery.js"></script>
   <script src="http://cdn.mcpestats.com/javascripts/foundation.min.js"></script>
-  
-  <!-- Initialize JS Plugins -->
   <script src="http://cdn.mcpestats.com/javascripts/app.js"></script>
-  <link rel="stylesheet" href="http://cdn.mcpestats.com/bootstrap.css">
   <script src="http://cdn.mcpestats.com/javascripts/modernizr.foundation.js"></script>
   <script type="text/javascript">
 	$(document).ready(function(){

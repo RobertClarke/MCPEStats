@@ -21,7 +21,7 @@
   </style>
 <![endif]-->
 	  <!-- Included JS Files (Compressed) -->
-  <script src="http://cdn.mcpestats.com/javascripts/jquery.js"></script>
+  <script src="<?php assetsDir(); ?>/javascripts/jquery.js"></script>
   <script src="http://cdn.mcpestats.com/javascripts/foundation.min.js"></script>
   
   <!-- Initialize JS Plugins -->

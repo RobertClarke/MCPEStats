@@ -69,17 +69,8 @@
 
 <body>
 <body>
-  <?php global $index; 
-  if($index){
-?>  <div class="featurebg" style="background:url(http://cdn.mcpestats.com/images/bigbg<?php echo rand(1,12); ?>.jpg) no-repeat center;background-size:100%;">
-    
-  </div> <?php } ?>
   <div class="navigation">
-    
   </div>
-  
-
-
   <div id="wrap">
     <div class="row" id="main">
 
@@ -114,7 +105,7 @@
                   <a href="/insert.php">add server</a>
                 </li>
                 <li>
-                  <a href="https://servercrate.com/mcpe.php">start a server</a>
+                  <a href="https://servercrate.com/mcpe">start a server</a>
                 </li>
               </ul>
 
@@ -140,7 +131,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <div class="row">
 <div class="twelve columns">
 <div class="twelve columns main feat">
-<h1>Penis Servers</h1>
+<h1>Minecraft PE Servers</h1>
 <p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for regular <a href="http://minecraft.serverlister.com/">Minecraft Servers</a>?</p>
 <br/>
 <p><b>Want to start your own Minecraft PE server? Check out this awesome <a href="http://servercrate.com/mcpe">Minecraft PE hosting.</a></p></b>

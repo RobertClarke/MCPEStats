@@ -8,17 +8,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/constants.php');
 
 $login = new Login();
 $Timer = MicroTime( true ); 
+$assetsDir = if($assets == 'local'){
+	echo '/assets';
+}
+else {
+	echo 'http://cdn.mcpestats.com'
+}
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/MinecraftQuery_Simple.php');
-
-function assetsDir($assets){
-	if($assets == 'local'){
-	echo '/assets';
-	}
-	else {
-		echo 'http://cdn.mcpestats.com'
-	}
-}
 
 
 function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $whitelist, $id)

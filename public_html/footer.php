@@ -1,4 +1,4 @@
-			<center><div style="padding-top:20px;align:center;">
+			<center><div style="padding-top:5px;align:center;">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- MCPE Lower Header 2 -->
 			<ins class="adsbygoogle"

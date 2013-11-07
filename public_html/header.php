@@ -69,17 +69,8 @@
 
 <body>
 <body>
-  <?php global $index; 
-  if($index){
-?>  <div class="featurebg" style="background:url(http://cdn.mcpestats.com/images/bigbg<?php echo rand(1,12); ?>.jpg) no-repeat center;background-size:100%;">
-    
-  </div> <?php } ?>
   <div class="navigation">
-    
   </div>
-  
-
-
   <div id="wrap">
     <div class="row" id="main">
 
@@ -114,7 +105,7 @@
                   <a href="/insert.php">add server</a>
                 </li>
                 <li>
-                  <a href="https://servercrate.com/mcpe.php">start a server</a>
+                  <a href="https://servercrate.com/mcpe">start a server</a>
                 </li>
               </ul>
 

@@ -90,7 +90,7 @@
       </a>
     <hr/>
       <a href="http://mcpeservers.com">
-        <img src="http://cdn.mcpestats.comhttp://cdn.mcpestats.com/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
+        <img src="http://cdn.mcpestats.com/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
       </a>
     <hr/>
       <a href="http://minecraft.serverlister.com/">

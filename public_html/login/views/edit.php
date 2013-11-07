@@ -85,6 +85,5 @@ if ($login->messages) {
 </form>
 </div>
 <?php
-
-	include '../../footer.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/footer.php';
 ?>

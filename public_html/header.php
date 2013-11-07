@@ -140,7 +140,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <div class="row">
 <div class="twelve columns">
 <div class="twelve columns main feat">
-<h1>Minecraft PE Servers</h1>
+<h1>Penis Servers</h1>
 <p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for regular <a href="http://minecraft.serverlister.com/">Minecraft Servers</a>?</p>
 <br/>
 <p><b>Want to start your own Minecraft PE server? Check out this awesome <a href="http://servercrate.com/mcpe">Minecraft PE hosting.</a></p></b>

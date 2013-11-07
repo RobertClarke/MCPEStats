@@ -68,7 +68,7 @@ if ($login->messages) {
 
 <div class="alert alert-success">
   <a class="close" data-dismiss="alert">×</a>
-  <strong>Hello!</strong>Be sure to follow us on Twitter for site updates: <a href="http://twitter.com/mcpestats">@mcpestats</a> <
+  Be sure to follow our new Twitter account for site updates: <a href="http://twitter.com/mcpestats">@mcpestats</a>
 </div>
 
 <table class="table table-striped table-condensed">

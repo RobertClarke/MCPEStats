@@ -136,7 +136,7 @@ h6.subheader{
 .togglelogos{
 	width:13px;
 	height:21px;
-	background:url(/images/toggle.png);
+	background:url(/assets/images/toggle.png);
 	position:absolute;
 	display:block;
 	right:8px;

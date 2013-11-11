@@ -12,22 +12,22 @@
   <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
   <meta name="keywords" content="minecraft pe servers, mcpe servers, mcpe server list, minecraft pe server list">
 
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
-  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
 
-  <link rel="stylesheet" href="/stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="/stylesheets/app.css">
-  <link rel="stylesheet" href="/bootstrap.css">
+  <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="/assets/stylesheets/app.css">
+  <link rel="stylesheet" href="/assets/bootstrap.css">
   <!--[if !IE 7]>
   <style type="text/css">
     #wrap {display:table;height:100%}
   </style>
   <![endif]-->
 
-  <script src="/javascripts/jquery.js"></script>
-  <script src="/javascripts/foundation.min.js"></script>
-  <script src="/javascripts/app.js"></script>
-  <script src="/javascripts/modernizr.foundation.js"></script>
+  <script src="/assets/javascripts/jquery.js"></script>
+  <script src="/assets/javascripts/foundation.min.js"></script>
+  <script src="/assets/javascripts/app.js"></script>
+  <script src="/assets/javascripts/modernizr.foundation.js"></script>
   <script type="text/javascript">
 	$(document).ready(function(){
 		$(".togglelogos").click(function(){
@@ -77,15 +77,15 @@
     <div class="three columns sidecontainer">
       <div class="row  box logo"> 
       <a href="http://mcpestats.com">
-        <img src="/images/logos/mcpestats.png" alt="Minecraft PE Servers"/>
+        <img src="/assets/images/logos/mcpestats.png" alt="Minecraft PE Servers"/>
       </a>
     <hr/>
       <a href="http://mcpeservers.com">
-        <img src="/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
+        <img src="/assets/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
       </a>
     <hr/>
       <a href="http://minecraft.serverlister.com/">
-        <img src="/images/logos/craftstats.png" alt="ServerLister"/>
+        <img src="/assets/images/logos/craftstats.png" alt="ServerLister"/>
       </a>
     <a class="togglelogos"></a>
       </div>

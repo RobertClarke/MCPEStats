@@ -45,7 +45,7 @@ catch( MinecraftQueryException $e )
 		if(isset($Error) or $result == 0)
 		{
 		?><div class='alert alert-info'>
-		<a href=index.php><< Back</a>
+		<a href=/><< Back</a>
 			<h4 class='alert-heading'>Exception:</h4>
 			<? echo htmlspecialchars($Error); ?>
 			<br>

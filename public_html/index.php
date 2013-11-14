@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
-  Be sure to follow our new Twitter account for site updates: <a href="http://twitter.com/mcpestats">@mcpestats</a>
+  Check out our new site, InstantMCPE, and start a free MCPE server in seconds: <a href="http://instantmcpe.com">instantmcpe.com</a>
 </div>
 
 <table class="table table-striped table-condensed">

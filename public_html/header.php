@@ -105,7 +105,7 @@
                   <a href="/insert.php">add server</a>
                 </li>
                 <li>
-                  <a href="https://servercrate.com/mcpe">start a server</a>
+                  <a href="http://bit.ly/17xZBpW">start a server</a>
                 </li>
               </ul>
 
@@ -134,7 +134,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <h1>Minecraft PE Servers</h1>
 <p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for regular <a href="http://minecraft.serverlister.com/">Minecraft Servers</a>?</p>
 <br/>
-<p><b>Want to start your own Minecraft PE server? Check out this awesome <a href="http://servercrate.com/mcpe">Minecraft PE hosting.</a></p></b>
+<p><b>Start your own 10 player MCPE server for only $8 a month with this awesome <a href="http://bit.ly/17xZBpW">Minecraft PE Hosting!</p></b>
 </div>
 </div>
 </div>

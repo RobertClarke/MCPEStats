@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
-  Check out our new site, InstantMCPE, and start a free MCPE server in seconds: <a href="http://instantmcpe.com">instantmcpe.com</a>
+  ServerCrate Minecraft Pocket Edition Hosting is now only $8 for a 10 player server, <a href="http://bit.ly/17xZBpW">buy now!</a>
 </div>
 
 <table class="table table-striped table-condensed">

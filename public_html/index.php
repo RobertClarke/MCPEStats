@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
-  Be sure to <a href=http://twitter.com/mcpestats">follow us on Twitter</a> for giveaways, updates, and more!
+  Be sure to <a href="http://twitter.com/mcpestats">follow us on Twitter</a> for giveaways, updates, and more!
 </div>
 
 <table class="table table-striped table-condensed">

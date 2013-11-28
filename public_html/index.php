@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
-  ServerCrate Minecraft Pocket Edition Hosting is now only $8 for a 10 player server, <a href="http://bit.ly/17xZBpW">buy now!</a>
+  Be sure to <a href=http://twitter.com/mcpestats">follow us on Twitter</a> for giveaways, updates, and more!
 </div>
 
 <table class="table table-striped table-condensed">

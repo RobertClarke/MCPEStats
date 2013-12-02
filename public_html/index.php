@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- ServerCrate is having a sale for Cyber Monday! MCPE servers are 75% off your first month today only with promo code CYBERMONDAY http://bit.ly/17xZBpW
+ ServerCrate is having a sale for Cyber Monday! MCPE servers are 75% off your first month today only with promo code CYBERMONDAY <a href="http://bit.ly/17xZBpW">http://bit.ly/17xZBpW</a>
 </div>
 
 <table class="table table-striped table-condensed">

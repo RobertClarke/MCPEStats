@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
-  Be sure to <a href="http://twitter.com/mcpestats">follow us on Twitter</a> for giveaways, updates, and more!
+  Be sure to <a href="http://twitter.com/mcpestats">ServerCrate is having a sale for Cyber Monday! MCPE servers are 75% off your first month today only with promo code CYBERMONDAY http://bit.ly/17xZBpW
 </div>
 
 <table class="table table-striped table-condensed">

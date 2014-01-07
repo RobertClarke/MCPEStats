@@ -13,3 +13,7 @@ rewriteCond %{REQUEST_URI} !(\.�/$)
 # and if filename exists when .php is appended
 rewriteCond %{REQUEST_FILENAME}.php -f
 rewriteRule (.+) /$1.php [L]
+
+#www to non www
+RewriteCond %{HTTP_HOST} ^www\.example\.com [NC]
+RewriteRule ^(.*)$ http://example.com/$1 [L,R=301]

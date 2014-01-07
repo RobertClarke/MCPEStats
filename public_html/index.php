@@ -66,9 +66,9 @@ if ($login->messages) {
 }
 ?>
 
-<div class="alert alert-success">
+<!--<div class="alert alert-success">
  Want to start your own MCPE server? Be sure to check out <a href="http://bit.ly/17xZBpW">this awesome cheap MCPE server hosting</a>
-</div>
+</div>-->
 
 <table class="table table-striped table-condensed">
 	  <thead>

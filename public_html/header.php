@@ -101,9 +101,9 @@
             <section>
               <!-- Left Nav Section -->
               <ul class="left">
-                <!--<li>
+                <li>
                   <a href="/insert.php">add server</a>
-                </li>-->
+                </li>
                 <li>
                   <a href="http://bit.ly/17xZBpW">start a server</a>
                 </li>

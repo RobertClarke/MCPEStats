@@ -66,9 +66,9 @@ if ($login->messages) {
 }
 ?>
 
-<!--<div class="alert alert-success">
- Want to start your own MCPE server? Be sure to check out <a href="http://bit.ly/17xZBpW">this awesome cheap MCPE server hosting</a>
-</div>-->
+<div class="alert alert-success">
+ Use <a href="http://instantmcpe.com">InstantMCPE</a> to create a <strong>free</strong> server for you and your friends to play on!
+</div>
 
 <table class="table table-striped table-condensed">
 	  <thead>

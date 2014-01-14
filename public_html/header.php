@@ -10,7 +10,7 @@
 
   <title><?php echo ($title ? $title : 'Minecraft PE Servers | MCPE Server List'); ?></title>
   <meta name="description" content="<?php echo ($desc ? $desc : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
-  <meta name="keywords" content="minecraft pe servers, mcpe servers, mcpe server list, minecraft pe server list">
+  <meta name="keywords" content="minecraft pe servers, mcpe servers, pocketmine servers, mcpe server list, minecraft pe server list">
 
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
   <link rel="shortcut icon" href="/assets/images/favicon.ico" />

@@ -168,9 +168,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 }
 mysqli_close($connect);
 
-
-
-/*include($_SERVER['DOCUMENT_ROOT']."/blog.php");*/
 ?>
 </tbody>
 </table>

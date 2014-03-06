@@ -1,13 +1,15 @@
 			<center><div style="padding-top:5px;align:center;">
+			
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- MCPE Lower Header 2 -->
+			<!-- MCPEStats Footer 1 -->
 			<ins class="adsbygoogle"
 			     style="display:inline-block;width:728px;height:90px"
-			     data-ad-client="ca-pub-8782622759360356"
-			     data-ad-slot="5129381030"></ins>
+			     data-ad-client="ca-pub-9942069625833765"
+			     data-ad-slot="5288113465"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
+			
 			</div></center>
 		</div>
 		<footer>

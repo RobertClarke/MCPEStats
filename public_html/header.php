@@ -140,16 +140,17 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 </div>
 <?php } ?>
 <div style="margin-bottom:20px;position:relative;top:20px;">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-8782622759360356";
-/* MCPE Header */
-google_ad_slot = "4769895837";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- MCPEStats Long Header 1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-9942069625833765"
+     data-ad-slot="3811380262"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+
 </div>
 <div class="twelve columns main">

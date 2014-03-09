@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /login/
 Disallow: /insert.php
 Disallow: /query.php

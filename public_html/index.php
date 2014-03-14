@@ -150,11 +150,11 @@ foreach($servers as $row){
 <center><div style="padding-bottom:20px;align:center;">
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- MCPEStats Header 1 -->
+<!-- MCPEStats Header 2 -->
 <ins class="adsbygoogle"
      style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-9942069625833765"
-     data-ad-slot="2334647062"></ins>
+     data-ad-client="ca-pub-3736311321196703"
+     data-ad-slot="4773859071"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>

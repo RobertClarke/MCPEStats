@@ -4,8 +4,8 @@
 			<!-- MCPEStats Footer 1 -->
 			<ins class="adsbygoogle"
 			     style="display:inline-block;width:728px;height:90px"
-			     data-ad-client="ca-pub-9942069625833765"
-			     data-ad-slot="5288113465"></ins>
+			     data-ad-client="ca-pub-3736311321196703"
+			     data-ad-slot="6250592271"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>

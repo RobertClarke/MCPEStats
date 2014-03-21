@@ -134,7 +134,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <h1>Minecraft PE Servers</h1>
 <p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data.</p>
 <br/>
-<p><b>Start your own 10 player MCPE server for only $8 a month with this awesome <a href="http://bit.ly/17xZBpW">Minecraft PE Hosting!</a></p></b>
+<center><a href="http://bit.ly/17xZBpW"><img srv="/assets/images/servercrate.png"></a></center>
 </div>
 </div>
 </div>

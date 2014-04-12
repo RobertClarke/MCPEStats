@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--<meta name="viewport" content="width=device-width" />-->
@@ -18,12 +15,6 @@
   <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css">
   <link rel="stylesheet" href="/assets/stylesheets/app.css">
   <link rel="stylesheet" href="/assets/bootstrap.css">
-  <!--[if !IE 7]>
-  <style type="text/css">
-    #wrap {display:table;height:100%}
-  </style>
-  <![endif]-->
-
   <script src="/assets/javascripts/jquery.js"></script>
   <script src="/assets/javascripts/foundation.min.js"></script>
   <script src="/assets/javascripts/app.js"></script>

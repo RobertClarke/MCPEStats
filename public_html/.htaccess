@@ -17,3 +17,6 @@ rewriteRule (.+) /$1.php [L]
 #www to non www
 RewriteCond %{HTTP_HOST} ^www\.mcpestats\.com [NC]
 RewriteRule ^(.*)$ http://mcpestats.com/$1 [L,R=301]
+
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}

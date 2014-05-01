@@ -96,7 +96,7 @@
                   <a href="/insert.php">add server</a>
                 </li>
                 <li>
-                  <a href="http://bit.ly/17xZBpW">start a server</a>
+                  <a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe">start a server</a>
                 </li>
               </ul>
 
@@ -124,7 +124,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <div class="twelve columns main feat">
 <h1>Minecraft PE Servers</h1>
 <p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data.</p>
-<center><a href="http://bit.ly/17xZBpW"><img src="/assets/images/servercrate.png"></a></center>
+<center><a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe"><img src="/assets/images/netherbox.jpg"></a></center>
 </div>
 </div>
 </div>

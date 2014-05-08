@@ -130,7 +130,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 </div>
 <?php } ?>
 <div style="margin-bottom:20px;position:relative;top:20px;">
-
+<center>
 <script type='text/javascript'><!--//<![CDATA[
 
    var m3_u = (location.protocol=='https:'?'https://delivery.us.myswitchads.com/adserver/www/delivery/ajs.php':'http://delivery.us.myswitchads.com/adserver/www/delivery/ajs.php');
@@ -147,6 +147,6 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
 //]]>--></script><noscript><a href='http://delivery.us.myswitchads.com/adserver/www/delivery/ck.php?n=a63849c5&amp;cb=' target='_blank'><img src='http://delivery.us.myswitchads.com/adserver/www/delivery/avw.php?zoneid=4264&amp;cb=&amp;n=a63849c5' border='0' alt='' /></a></noscript>
-
+</center>
 </div>
 <div class="twelve columns main">

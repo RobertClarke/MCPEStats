@@ -131,22 +131,15 @@ if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false){
 <?php } ?>
 <div style="margin-bottom:20px;position:relative;top:20px;">
 <center>
-<script type='text/javascript'><!--//<![CDATA[
-
-   var m3_u = (location.protocol=='https:'?'https://delivery.us.myswitchads.com/adserver/www/delivery/ajs.php':'http://delivery.us.myswitchads.com/adserver/www/delivery/ajs.php');
-   var m3_r = Math.floor(Math.random()*99999999999);
-   if (!document.MAX_used) document.MAX_used = ',';
-   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-   document.write ("?zoneid=4264");
-   document.write ('&amp;cb=' + m3_r);
-   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-   document.write ("&amp;loc=" + escape(window.location));
-   document.write ("&amp;tzo=" + (new Date().getTimezoneOffset()));
-   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-   if (document.context) document.write ("&context=" + escape(document.context));
-   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-   document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://delivery.us.myswitchads.com/adserver/www/delivery/ck.php?n=a63849c5&amp;cb=' target='_blank'><img src='http://delivery.us.myswitchads.com/adserver/www/delivery/avw.php?zoneid=4264&amp;cb=&amp;n=a63849c5' border='0' alt='' /></a></noscript>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- MCPEStats Header 1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-3736311321196703"
+     data-ad-slot="3297125873"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </center>
 </div>
 <div class="twelve columns main">

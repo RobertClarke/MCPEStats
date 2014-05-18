@@ -84,7 +84,7 @@ if ($login->messages) {
   <tbody>
 <tr>
 <?php
-	echo "<td>Lifeboat Survival Games (Hunger Games)</td>";
+	echo "<td><strong>Lifeboat Survival Games (Hunger Games)</strong></td>";
 	echo "<td>williamtdr</td>";
 	echo '<td><span class="label label-success">Public</span></td>';
 	echo "<td>play.lbsg.net:19132</td>";
@@ -94,7 +94,7 @@ if ($login->messages) {
 </tr>
 <tr>
 <?php
-	echo "<td>Lifeboat Capture the Flag</td>";
+	echo "<td><strong>Lifeboat Capture the Flag</strong></td>";
 	echo "<td>williamtdr</td>";
 	echo '<td><span class="label label-success">Public</span></td>';
 	echo "<td>ctf.lbsg.net:19132</td>";
@@ -104,7 +104,7 @@ if ($login->messages) {
 </tr>
 <tr>
 <?php
-	echo "<td>Lifeboat Infinite Survival</td>";
+	echo "<td><strong>Lifeboat Infinite Survival</strong></td>";
 	echo "<td>williamtdr</td>";
 	echo '<td><span class="label label-success">Public</span></td>';
 	echo "<td>infinity.lbsg.net:19132</td>";

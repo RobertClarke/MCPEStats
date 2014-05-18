@@ -164,7 +164,7 @@ while($row = $result->fetch_assoc()){
 $cpage = ($_GET['p'] ? $_GET['p'] : 1);
 $cpage = max(1,min($cpage,ceil(count($servers)/25)));
 $pagemin = ($cpage-1)*25;
-$pagemax = $pagemin+25;
+$pagemax = $pagemin+22;
 $i = 0;
 foreach($servers as $row){
 	if($i<$pagemin || $i>=$pagemax){

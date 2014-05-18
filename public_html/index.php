@@ -172,7 +172,7 @@ foreach($servers as $row){
 	continue;
 	}
 	$i++;
-	if($i == ($pagemin + 10))
+	if($i == ($pagemin + 6))
 	{
 		?>
 			</tbody>

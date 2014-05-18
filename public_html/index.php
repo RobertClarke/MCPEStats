@@ -162,36 +162,6 @@ foreach($servers as $row){
 </div></center>
 			<table class="table table-striped table-condensed">
 			<tbody>
-			<tr>
-				<?php
-					echo "<td>Lifeboat Survival Games (Hunger Games)</td>";
-					echo "<td>williamtdr</td>";
-					echo '<span class="label label-success">Public</span>';
-					echo "<td>play.lbsg.net</td>"
-					echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=SG")."/7440</td>";
-					echo '<span class="label label-success">Online</span>';
-				?>
-			</tr>
-			<tr>
-				<?php
-					echo "<td>Lifeboat Capture the Flag</td>";
-					echo "<td>williamtdr</td>";
-					echo '<span class="label label-success">Public</span>';
-					echo "<td>ctf.lbsg.net</td>"
-					echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=CTF")."/720</td>";
-					echo '<span class="label label-success">Online</span>';
-				?>
-			</tr>
-			<tr>
-				<?php
-					echo "<td>Lifeboat Infinite Survival</td>";
-					echo "<td>williamtdr</td>";
-					echo '<span class="label label-success">Public</span>';
-					echo "<td>infinity.lbsg.net</td>"
-					echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=inf")."/480</td>";
-					echo '<span class="label label-success">Online</span>';
-				?>
-			</tr>
 		<?php
 	}
 	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));

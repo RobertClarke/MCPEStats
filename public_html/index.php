@@ -87,7 +87,7 @@ if ($login->messages) {
 	echo "<td>Lifeboat Survival Games (Hunger Games)</td>";
 	echo "<td>williamtdr</td>";
 	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>play.lbsg.net</td>";
+	echo "<td>play.lbsg.net:19132</td>";
 	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=SG")."/7440</td>";
 	echo '<td><span class="label label-success">Online</span></td>';
 ?>
@@ -97,7 +97,7 @@ if ($login->messages) {
 	echo "<td>Lifeboat Capture the Flag</td>";
 	echo "<td>williamtdr</td>";
 	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>ctf.lbsg.net</td>";
+	echo "<td>ctf.lbsg.net:19132</td>";
 	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=CTF")."/720</td>";
 	echo '<td><span class="label label-success">Online</span></td>';
 ?>
@@ -107,7 +107,7 @@ if ($login->messages) {
 	echo "<td>Lifeboat Infinite Survival</td>";
 	echo "<td>williamtdr</td>";
 	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>infinity.lbsg.net</td>";
+	echo "<td>infinity.lbsg.net:19132</td>";
 	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=inf")."/480</td>";
 	echo '<td><span class="label label-success">Online</span></td>';
 ?>

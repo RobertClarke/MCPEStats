@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Use <a href="http://instantmcpe.com">InstantMCPE</a> to create a <strong>free</strong> server for you and your friends to play on!
+ Be sure to check and and sign up for an account on  <a href="http://mcpehub.com">MCPEHub.com</a> to find new awesome seeds, maps, servers and more!
 </div>
 
 <table class="table table-striped table-condensed">

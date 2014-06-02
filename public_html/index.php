@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Use <a href="http://instantmcpe.com">InstantMCPE</a> to create a <strong>free</strong> server for you and your friends to play on!
+ Be sure to check and and sign up for an account on  <a href="http://mcpehub.com">MCPEHub.com</a> to find new awesome seeds, maps, servers and more!
 </div>
 
 <table class="table table-striped table-condensed">
@@ -82,6 +82,36 @@ if ($login->messages) {
       </tr>
   </thead>   
   <tbody>
+<tr>
+<?php
+	echo "<td><strong>Lifeboat Survival Games (Hunger Games)</strong></td>";
+	echo "<td>williamtdr</td>";
+	echo '<td><span class="label label-success">Public</span></td>';
+	echo "<td>play.lbsg.net:19132</td>";
+	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=SG")."/7440</td>";
+	echo '<td><span class="label label-success">Online</span></td>';
+?>
+</tr>
+<tr>
+<?php
+	echo "<td><strong>Lifeboat Capture the Flag</strong></td>";
+	echo "<td>williamtdr</td>";
+	echo '<td><span class="label label-success">Public</span></td>';
+	echo "<td>ctf.lbsg.net:19132</td>";
+	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=CTF")."/720</td>";
+	echo '<td><span class="label label-success">Online</span></td>';
+?>
+</tr>
+<tr>
+<?php
+	echo "<td><strong>Lifeboat Infinite Survival</strong></td>";
+	echo "<td>williamtdr</td>";
+	echo '<td><span class="label label-success">Public</span></td>';
+	echo "<td>infinity.lbsg.net:19132</td>";
+	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=inf")."/480</td>";
+	echo '<td><span class="label label-success">Online</span></td>';
+?>
+</tr>
 <?php
 //shuffle($data);
 
@@ -134,7 +164,7 @@ while($row = $result->fetch_assoc()){
 $cpage = ($_GET['p'] ? $_GET['p'] : 1);
 $cpage = max(1,min($cpage,ceil(count($servers)/25)));
 $pagemin = ($cpage-1)*25;
-$pagemax = $pagemin+25;
+$pagemax = $pagemin+22;
 $i = 0;
 foreach($servers as $row){
 	if($i<$pagemin || $i>=$pagemax){
@@ -142,7 +172,7 @@ foreach($servers as $row){
 	continue;
 	}
 	$i++;
-	if($i == ($pagemin + 10))
+	if($i == ($pagemin + 6))
 	{
 		?>
 			</tbody>

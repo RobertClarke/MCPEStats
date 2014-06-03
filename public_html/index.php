@@ -82,36 +82,30 @@ if ($login->messages) {
       </tr>
   </thead>   
   <tbody>
-<tr>
 <?php
-	echo "<td><strong>Lifeboat Survival Games (Hunger Games)</strong></td>";
-	echo "<td>williamtdr</td>";
-	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>play.lbsg.net:19132</td>";
-	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=SG")."/7440</td>";
-	echo '<td><span class="label label-success">Online</span></td>';
+	$unformatted_data = file_get_contents("http://account.lbsg.net/playercount/pestats.php");
+	$failed = false;
+	if($unformatted_data === false) {
+		$failed = true;
+	} else {
+		$data = json_decode($unformatted_data,true);
+	}
+	if($failed === false) {
+		$gametypes = array(array('name' => 'Lifeboat Survival Games (Hunger Games)', 'ip' => 'play.lbsg.net:19132', 'maxslots' => 7440, 'refer' => 'sg'),
+		array('name' => 'Lifeboat Capture the Flag', 'ip' => 'ctf.lbsg.net:19132', 'maxslots' => 420, 'refer' => 'ctf'),
+		array('name' => 'Lifeboat Infinity (Infinite World Survival)', 'ip' => 'infinity.lbsg.net:19132', 'maxslots' => 200, 'refer' => 'inf'));
+		foreach($gametypes as $gametype) {
+			echo '<tr>';
+			echo "<td><strong>".$gametype['name']."</strong></td>";
+			echo "<td>williamtdr</td>";
+			echo '<td><span class="label label-success">Public</span></td>';
+			echo "<td>".$gametype['ip']."</td>";
+			echo "<td>".$data[$gametype['refer']]."/".$gametype['refer']."</td>";
+			echo '<td><span class="label label-success">Online</span></td>';
+			echo '</tr>';
+		}
+	}
 ?>
-</tr>
-<tr>
-<?php
-	echo "<td><strong>Lifeboat Capture the Flag</strong></td>";
-	echo "<td>williamtdr</td>";
-	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>ctf.lbsg.net:19132</td>";
-	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=CTF")."/720</td>";
-	echo '<td><span class="label label-success">Online</span></td>';
-?>
-</tr>
-<tr>
-<?php
-	echo "<td><strong>Lifeboat Infinite Survival</strong></td>";
-	echo "<td>williamtdr</td>";
-	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>infinity.lbsg.net:19132</td>";
-	echo "<td>".file_get_contents("http://account.lbsg.net/playercount/tracker.php?server=inf")."/480</td>";
-	echo '<td><span class="label label-success">Online</span></td>';
-?>
-</tr>
 <?php
 //shuffle($data);
 

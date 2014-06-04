@@ -100,7 +100,7 @@ if ($login->messages) {
 			echo "<td>williamtdr</td>";
 			echo '<td><span class="label label-success">Public</span></td>';
 			echo "<td>".$gametype['ip']."</td>";
-			echo "<td>".$data[$gametype['refer']]."/".$gametype['refer']."</td>";
+			echo "<td>".$data[$gametype['refer']]."/".$gametype['maxslots']."</td>";
 			echo '<td><span class="label label-success">Online</span></td>';
 			echo '</tr>';
 		}

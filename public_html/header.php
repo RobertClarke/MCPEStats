@@ -99,6 +99,9 @@
                   <a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe">start a server</a>
                 </li>
                 <li>
+                  <a href="http://mcpehub.com/0.9.0.php">minecraft pe 0.9.0</a>
+                </li>
+                <li>
                   <a href="http://instantmcpe.com">instantmcpe</a>
                 </li>
               </ul>

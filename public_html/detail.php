@@ -135,7 +135,8 @@ catch( MinecraftQueryException $e )
 </div>
 <div class='span6'>
 
-<div class='thumbnail'>
+
+<div class='thumbnail'><center>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- MCPEHub Content 1 -->
 <ins class="adsbygoogle"
@@ -145,10 +146,8 @@ catch( MinecraftQueryException $e )
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
-
+</center></div>
 <br><br>
-
 <div class='thumbnail'>
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">

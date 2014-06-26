@@ -134,6 +134,19 @@ catch( MinecraftQueryException $e )
 <?php } ?>
 </div>
 <div class='span6'>
+
+<div class='thumbnail'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- MCPEHub Content 1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-3736311321196703"
+     data-ad-slot="6298693077"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
 <div class='thumbnail'>
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">

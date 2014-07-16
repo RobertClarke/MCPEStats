@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Have an iPhone/iPad/Android Device? <a href="http://featu.re/KE834G">Click here</a> to get apps like <strong>Minecraft PE for free</strong> :)
+ Looking for more <a href="http://mcpeserverslist.com">Minecraft PE Servers</a>? Check out our other site, MCPEServersList for more MCPE Servers :) <a href="http://mcpeserverslist.com">http://mcpeserverslist.com</a>
 </div>
 
 <table class="table table-striped table-condensed">

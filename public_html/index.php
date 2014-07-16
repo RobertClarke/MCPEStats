@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Have an iPhone/iPad? <a href="http://featu.re/KE834G">Click here</a> to get apps like <strong>Minecraft PE for free</strong> :)
+ Have an iPhone/iPad/Android Device? <a href="http://featu.re/KE834G">Click here</a> to get apps like <strong>Minecraft PE for free</strong> :)
 </div>
 
 <table class="table table-striped table-condensed">

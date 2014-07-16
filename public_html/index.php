@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Be sure to check and and sign up for an account on  <a href="http://mcpehub.com">MCPEHub.com</a> to find new awesome seeds, maps, servers and more!
+ Have an iPhone/iPad? <a href="http://featu.re/KE834G">Click here to learn how to get apps like <strong>Minecraft PE for free</strong> :)
 </div>
 
 <table class="table table-striped table-condensed">

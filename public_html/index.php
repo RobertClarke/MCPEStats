@@ -83,30 +83,6 @@ if ($login->messages) {
   </thead>   
   <tbody>
 <?php
-	$unformatted_data = file_get_contents("http://account.lbsg.net/playercount/pestats.php");
-	$failed = false;
-	if($unformatted_data === false) {
-		$failed = true;
-	} else {
-		$data = json_decode($unformatted_data,true);
-	}
-	if($failed === false) {
-		$gametypes = array(array('name' => 'Lifeboat Survival Games (Hunger Games)', 'ip' => 'play.lbsg.net:19132', 'maxslots' => 7440, 'refer' => 'sg'),
-		array('name' => 'Lifeboat Capture the Flag', 'ip' => 'ctf.lbsg.net:19132', 'maxslots' => 420, 'refer' => 'ctf'),
-		array('name' => 'Lifeboat Infinity (Infinite World Survival)', 'ip' => 'infinity.lbsg.net:19132', 'maxslots' => 200, 'refer' => 'inf'));
-		foreach($gametypes as $gametype) {
-			echo '<tr>';
-			echo "<td><strong>".$gametype['name']."</strong></td>";
-			echo "<td>williamtdr</td>";
-			echo '<td><span class="label label-success">Public</span></td>';
-			echo "<td>".$gametype['ip']."</td>";
-			echo "<td>".$data[$gametype['refer']]."/".$gametype['maxslots']."</td>";
-			echo '<td><span class="label label-success">Online</span></td>';
-			echo '</tr>';
-		}
-	}
-?>
-<?php
 //shuffle($data);
 
 //For some reason this needs to go below the table statement. Weird.
@@ -158,7 +134,7 @@ while($row = $result->fetch_assoc()){
 $cpage = ($_GET['p'] ? $_GET['p'] : 1);
 $cpage = max(1,min($cpage,ceil(count($servers)/25)));
 $pagemin = ($cpage-1)*25;
-$pagemax = $pagemin+22;
+$pagemax = $pagemin+25;
 $i = 0;
 foreach($servers as $row){
 	if($i<$pagemin || $i>=$pagemax){
@@ -166,7 +142,7 @@ foreach($servers as $row){
 	continue;
 	}
 	$i++;
-	if($i == ($pagemin + 6))
+	if($i == ($pagemin + 10))
 	{
 		?>
 			</tbody>

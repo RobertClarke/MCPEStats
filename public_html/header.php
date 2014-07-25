@@ -67,15 +67,15 @@
 
     <div class="three columns sidecontainer">
       <div class="row  box logo"> 
-      <a href="http://mcpestats.com">
+      <a href="http://mcpestats.com/">
         <img src="/assets/images/logos/mcpestats.png" alt="Minecraft PE Servers"/>
       </a>
     <hr/>
-      <a href="http://mcpeservers.com">
+      <a href="http://mcpestats.com/">
         <img src="/assets/images/logos/mcpeservers.png" alt="Minecraft PE Servers"/>
       </a>
     <hr/>
-      <a href="http://minecraft.serverlister.com/">
+      <a href="http://mcpestats.com/">
         <img src="/assets/images/logos/craftstats.png" alt="ServerLister"/>
       </a>
     <a class="togglelogos"></a>

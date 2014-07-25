@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Looking for more <a href="http://mcpeserverslist.com">Minecraft PE Servers</a>? Check out our other site, MCPEServersList for more MCPE Servers :) <a href="http://mcpeserverslist.com">http://mcpeserverslist.com</a>
+ Starting a new MCPE world and need <a href="http://mcpehub.com/seeds">Minecraft PE Seeds</a>? We've got a site for that :)
 </div>
 
 <table class="table table-striped table-condensed">

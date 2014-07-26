@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/constants.php');
+require_once(__DIR__."/../../_libs/constants.php");
 
 /**
  * Configuration file for: Database Connection

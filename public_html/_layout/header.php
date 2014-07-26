@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__."/../_libs/login_includes.php");
+$login = new Login();
 ?>
 <!DOCTYPE html>
 <head>

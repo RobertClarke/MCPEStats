@@ -1,5 +1,8 @@
 <?php
 require_once(__DIR__.'/_libs/constants.php');
+require_once(__DIR__.'/_libs/minecraft_includes.php');
+
+$Query = new MinecraftQuery();
 
 if(!(isset($_GET['id'])))
 {

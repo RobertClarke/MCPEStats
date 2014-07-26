@@ -1,6 +1,5 @@
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
-include 'header.php';
+<?php
+require_once(__DIR__.'/_layout/header.php');
 ?>
 
     <div id="legend">
@@ -80,5 +79,5 @@ include 'header.php';
 
 <?php
 
-	include 'footer.php';
+	include '_layout/footer.php';
 ?>

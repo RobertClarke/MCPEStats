@@ -1,6 +1,6 @@
 <?
 
-require_once('constants.php');
+require_once(__DIR__.'/_libs/constants.php');
 
 function addIP($ip, $port = "19132", $username, $whitelist)
 {

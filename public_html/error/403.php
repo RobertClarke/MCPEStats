@@ -76,7 +76,7 @@ Please do not fill the support box with messages such as 'I didn't hack!!!'. <b>
 <div class="container">
     	<div class="page-header">
 <footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
+			<? include($_SERVER['DOCUMENT_ROOT']."/_layout/_layout/footer.php"); ?>
 		</footer>
 	</div>
 </div>

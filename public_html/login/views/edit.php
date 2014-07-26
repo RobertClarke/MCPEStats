@@ -1,9 +1,8 @@
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
-include $_SERVER['DOCUMENT_ROOT'].'/header.php';
-?>
+<?php
+require_once(__DIR__."/../../_layout/header.php");
+require_once(__DIR__."/../../_libs/login_includes.php");
 
-		<?$Timer = MicroTime( true ); 
+$Timer = MicroTime( true );
 		// show negative messages
 if ($login->errors) {
     foreach ($login->errors as $error) {
@@ -85,5 +84,5 @@ if ($login->messages) {
 </form>
 </div>
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/footer.php';
+	require_once(__DIR__.'/../../_layout/footer.php');
 ?>

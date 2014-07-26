@@ -1,11 +1,12 @@
 <?php
 
-require __DIR__ . '/MinecraftQuery.class.php';
+require_once(__DIR__."/_libs/minecraft_includes.php");
+require_once(__DIR__."/_libs/constants.php");
 
 //set_time_limit(300);
 
-$connect = mysqli_connect("localhost","mcpestat_MCPE","q^6e?A;F?C@+") or die(mysqli_error($connect));
-mysqli_select_db($connect, "mcpestat_MCPE") or die(mysqli_error($connect));
+$connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS) or die(mysqli_error($connect));
+mysqli_select_db($connect, DB_NAME) or die(mysqli_error($connect));
 
 $query = "select * from ServerList1 where 1 ORDER BY rand()";
 
@@ -44,4 +45,3 @@ while($data = mysqli_fetch_array($result))
 
 $result->free();
 mysqli_close($connect);
-?>

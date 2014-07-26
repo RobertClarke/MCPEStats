@@ -1,9 +1,9 @@
 <!-- this is the Simple sexy PHP Login Script. You can find it on http://www.php-login.net ! It's free and open source. -->
 
 <!-- errors & messages --->
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
-include $_SERVER['DOCUMENT_ROOT'].'/header.php';
+<?php
+require_once(__DIR__.'/../../_layout/header.php');
+require_once(__DIR__."/../../_libs/login_includes.php");
 ?>
         
 <div class="six columns centered">
@@ -54,5 +54,5 @@ if ($login->messages) {
 
 <!-- this is the Simple sexy PHP Login Script. You can find it on http://www.php-login.net ! It's free and open source. -->
 <?php 
-	include $_SERVER['DOCUMENT_ROOT'].'/footer.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/_layout/footer.php';
 ?>

@@ -1,7 +1,7 @@
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
-include 'header.php';
-require_once('constants.php');
+<?php
+require_once(__DIR__.'/_layout/header.php');
+require_once(__DIR__.'/_libs/constants.php');
+require_once(__DIR__.'/_libs/display_r_t.php');
 
 if($_GET['delete']){
 	$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
@@ -203,4 +203,4 @@ mysqli_close($connect);
 		</div>
       </div>
 	  
-<?php include 'footer.php'; ?>
+<?php include '_layout/footer.php'; ?>

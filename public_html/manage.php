@@ -1,7 +1,7 @@
 <?
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
-include 'header.php';
-require_once('constants.php');
+require_once(__DIR__.'/_layout/header.php');
+require_once(__DIR__.'/_libs/constants.php');
+require_once(__DIR__.'/_libs/display_r_t.php');
 
 if ($login->isUserLoggedIn() != true) {
 	include("login/views/not_logged_in.php");
@@ -132,5 +132,5 @@ mysqli_close($connect);
 </table>
 <?php
 
-include 'footer.php';
+include '_layout/footer.php';
 ?>

@@ -1,11 +1,10 @@
-<?php 
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
-require_once('constants.php');
-
+<?php
+require_once(__DIR__.'/_libs/constants.php');
 
 if(!(isset($_GET['id'])))
+{
 	exit();
+}
 
 $connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
 mysqli_select_db($connect, DB_NAME);
@@ -23,13 +22,9 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
 
-$desc = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. Join now!';
-$title = $result['Name'].' - Minecraft PE Server';
-include 'header.php';
-?>
-    <?php
-   
-
+$_DESCRIPTION = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. Join now!';
+$_TITLE = $result['Name'].' - Minecraft PE Server';
+require_once(__DIR__.'/_layout/header.php');
 
 try
 {
@@ -40,8 +35,6 @@ catch( MinecraftQueryException $e )
 		$Error = $e->getMessage( );
 }	
 
-?>
-		<?php
 		if(isset($Error) or $result == 0)
 		{
 		?><div class='alert alert-info'>
@@ -52,7 +45,7 @@ catch( MinecraftQueryException $e )
 			If you are getting this error, the id variable probably isn't valid.</div>
 			
 		<footer>
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/footer.php'); ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/_layout/_layout/footer.php'); ?>
 		</footer>
 	</div>
 </div>
@@ -60,8 +53,10 @@ catch( MinecraftQueryException $e )
 
 		exit();
 		}
-		
+
+        /** @var array $Info */
 		$Info = $Query->GetInfo( );
+        /** @var array $Players */
 		$Players = $Query->GetPlayers( );
 		
 		function parseWhitelist($whitelist)
@@ -220,4 +215,4 @@ $re++;
 </div>-->
 <hr>
  
-<?php include 'footer.php';?>
+<?php include '_layout/_layout/footer.php';?>

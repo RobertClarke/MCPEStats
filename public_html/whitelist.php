@@ -180,7 +180,7 @@ else
 
 
 		<footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
+			<? include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
 		</footer>
 	</div>
 </div>

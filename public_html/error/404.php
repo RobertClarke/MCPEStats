@@ -47,7 +47,7 @@
 <div class="container">
     	<div class="page-header">
 <footer>
-			<? include($_SERVER['DOCUMENT_ROOT']."/footer.php"); ?>
+			<? include($_SERVER['DOCUMENT_ROOT']."/_layout/_layout/footer.php"); ?>
 		</footer>
 	</div>
 </div>

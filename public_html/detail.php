@@ -43,6 +43,21 @@ function parseWhitelist($whitelist)
             return "<span class='label label-warning'>Unknown</span>";
     }
 }
+
+function parseOnlineStatus($x)
+{
+    switch($x)
+    {
+        case 'Online':
+            return "<span class='label label-success'>Online</span>";
+            break;
+        case 'Offline':
+            return "<span class='label label-important'>Offline</span>";
+            break;
+        default:
+            return "<span class='label label-warning'>Pending</span>";
+    }
+}
 		?>
 <h2><?php echo htmlspecialchars($result['Name']); ?></h2>
 
@@ -51,6 +66,8 @@ function parseWhitelist($whitelist)
 <div class='thumbnail'>
 <dl class="dl-horizontal">
 <div class='centered-text'><h5>Basic Server Info</h5></div>
+  <dt>Server Status</dt>
+  <dd><?php echo parseOnlineStatus($result['WhetherOnline']); ?></dd>
   <dt>Server Name</dt>
   <dd><?php echo htmlspecialchars($result['Name']); ?></dd>
   <dt>Server IP</dt>

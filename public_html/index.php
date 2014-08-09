@@ -1,7 +1,7 @@
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
-include 'header.php';
-require_once('constants.php');
+<?php
+require_once(__DIR__.'/_layout/header.php');
+require_once(__DIR__.'/_libs/constants.php');
+require_once(__DIR__.'/_libs/display_r_t.php');
 
 if($_GET['delete']){
 	$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
@@ -74,7 +74,7 @@ if ($login->messages) {
 	  <thead>
       <tr>
           <th>Name</th>
-          <th>Owner</th>
+          <th>Version</th>
           <th>Whitelist</th>
           <th>Server IP</th>
           <th>Players</th>
@@ -164,7 +164,7 @@ foreach($servers as $row){
 			<tbody>
 		<?php
 	}
-	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']), htmlspecialchars($row['ServerMCPEVersion']));
 }
 mysqli_close($connect);
 
@@ -203,4 +203,4 @@ mysqli_close($connect);
 		</div>
       </div>
 	  
-<?php include 'footer.php'; ?>
+<?php include '_layout/footer.php'; ?>

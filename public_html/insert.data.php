@@ -1,6 +1,7 @@
 <?
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
-require __DIR__ . '/insert.class.php';
+require_once(__DIR__."/_libs/login_includes.php");
+require_once(__DIR__.'/insert.class.php');
+
 $login = new Login();
 
 if ($login->isUserLoggedIn() != true) {
@@ -31,5 +32,4 @@ else
 {
 	header( 'Location: /index.php?serveradded='.$data) ;
 }
-?>
 

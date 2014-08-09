@@ -1,11 +1,13 @@
-<?php 
+<?php
+require_once(__DIR__.'/_libs/constants.php');
+require_once(__DIR__.'/_libs/minecraft_includes.php');
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');
-require_once('constants.php');
-
+$Query = new MinecraftQuery();
 
 if(!(isset($_GET['id'])))
+{
 	exit();
+}
 
 $connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
 mysqli_select_db($connect, DB_NAME);
@@ -16,68 +18,46 @@ $id = mysqli_real_escape_string($connect, $id);
 
 $result = array();
 
-$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules FROM ServerList1 WHERE id=? LIMIT 0,1");
+$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules, ServerMCPEVersion, Map, GameType, Software FROM ServerList1 WHERE id=? LIMIT 0,1");
 mysqli_stmt_bind_param($stmt, "d", $id);
-mysqli_stmt_bind_result($stmt, $result['id'], $result['Name'], $result['IP'], $result['Port'], $result['Last_Players'], $result['Last_MaxPlayers'], $result['WhetherOnline'], $result['RegisteredDate'], $result['WhetherOnlineNum'], $result['Owner'], $result['WhetherWhitelisted'], $result['Description'], $result['ServerRules']);
+mysqli_stmt_bind_result($stmt, $result['id'], $result['Name'], $result['IP'], $result['Port'], $result['Last_Players'], $result['Last_MaxPlayers'], $result['WhetherOnline'], $result['RegisteredDate'], $result['WhetherOnlineNum'], $result['Owner'], $result['WhetherWhitelisted'], $result['Description'], $result['ServerRules'], $result['ServerMCPEVersion'], $result['Map'], $result['GameType'], $result['Software']);
 mysqli_stmt_execute($stmt);
 mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
 
-$desc = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. Join now!';
-$title = $result['Name'].' - Minecraft PE Server';
-include 'header.php';
-?>
-    <?php
-   
+$_DESCRIPTION = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition Server. Join now!';
+$_TITLE = $result['Name'].' - Minecraft PE Server';
+require_once(__DIR__.'/_layout/header.php');
 
-
-try
+function parseWhitelist($whitelist)
 {
-		$Query->Connect($result['IP'], $result['Port'], 5 );
+    switch($whitelist)
+    {
+        case 0:
+            return "<span class='label label-success'>Public</span>";
+            break;
+        case 1:
+            return "<span class='label label-important'>Whitelisted</span>";
+            break;
+        default:
+            return "<span class='label label-warning'>Unknown</span>";
+    }
 }
-catch( MinecraftQueryException $e )
+
+function parseOnlineStatus($x)
 {
-		$Error = $e->getMessage( );
-}	
-
-?>
-		<?php
-		if(isset($Error) or $result == 0)
-		{
-		?><div class='alert alert-info'>
-		<a href=/><< Back</a>
-			<h4 class='alert-heading'>Exception:</h4>
-			<? echo htmlspecialchars($Error); ?>
-			<br>
-			If you are getting this error, the id variable probably isn't valid.</div>
-			
-		<footer>
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/footer.php'); ?>
-		</footer>
-	</div>
-</div>
-</body></html><?php
-
-		exit();
-		}
-		
-		$Info = $Query->GetInfo( );
-		$Players = $Query->GetPlayers( );
-		
-		function parseWhitelist($whitelist)
-		{
-			switch($whitelist)
-			{
-				case 0:
-					return "<span class='label label-success'>Public</span>";
-					break;
-				case 1:
-					return "<span class='label label-important'>Whitelisted</span>";
-					break;
-				default:
-					return "<span class='label label-warning'>Unknown</span>";
-			}
-		}
+    switch($x)
+    {
+        case 'Online':
+            return "<span class='label label-success'>Online</span>";
+            break;
+        case 'Offline':
+            return "<span class='label label-important'>Offline</span>";
+            break;
+        default:
+            return "<span class='label label-warning'>Pending</span>";
+    }
+}
 		?>
 <h2><?php echo htmlspecialchars($result['Name']); ?></h2>
 
@@ -86,6 +66,8 @@ catch( MinecraftQueryException $e )
 <div class='thumbnail'>
 <dl class="dl-horizontal">
 <div class='centered-text'><h5>Basic Server Info</h5></div>
+  <dt>Server Status</dt>
+  <dd><?php echo parseOnlineStatus($result['WhetherOnline']); ?></dd>
   <dt>Server Name</dt>
   <dd><?php echo htmlspecialchars($result['Name']); ?></dd>
   <dt>Server IP</dt>
@@ -97,13 +79,13 @@ catch( MinecraftQueryException $e )
   <dt>Registration Date</dt>
   <dd><?php echo htmlspecialchars($result['RegisteredDate']); ?></dd>
   <dt>Map</dt>
-  <dd><?php echo htmlspecialchars($Info['Map']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Map']); ?></dd>
   <dt>Gamemode</dt>
-  <dd><?php echo htmlspecialchars($Info['GameType']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['GameType']); ?></dd>
   <dt>Version</dt>
-  <dd><?php echo htmlspecialchars($Info['Version']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['ServerMCPEVersion']); ?></dd>
   <dt>Software</dt>
-  <dd><?php echo htmlspecialchars($Info['Software']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Software']); ?></dd>
   <dt>Whitelist</dt>
   <dd><?php echo parseWhitelist($result['WhetherWhitelisted']); ?></dd>
 </dl>
@@ -113,7 +95,7 @@ catch( MinecraftQueryException $e )
 <div class='row-fluid'>
 <div class='centered-text span6'><h5>Plugins</h5>
   <?php
-  foreach($Info['Plugins'] as $p)
+  foreach(json_decode($result['Plugins'], true) as $p)
   {
   	echo htmlspecialchars($p)."<br>";
   }
@@ -151,14 +133,32 @@ catch( MinecraftQueryException $e )
 <div class='thumbnail'>
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">
-  <?php echo $result['Description']; ?>
+  <?php
+  if($result['Description'] !== "")
+  {
+      echo $result['Description'];
+  }
+  else
+  {
+      echo BLANK_DESCRIPTION_MESSAGE;
+  }
+  ?>
   </p>
 </div>
 <br><br>
 <div class='thumbnail'>
 <div class='centered-text'><h5>Server Rules</h5></div>
   <p style="padding:0 19px">
-  <?php echo $result['ServerRules']; ?>
+<?php
+    if($result['ServerRules'] !== "")
+    {
+        echo $result['ServerRules'];
+    }
+    else
+    {
+        echo BLANK_SERVER_RULES_MESSAGE;
+    }
+?>
   </p>
 </div>
 <br><br>
@@ -166,14 +166,14 @@ catch( MinecraftQueryException $e )
 <table class='table table-bordered table-striped'>
 <thead>
 <tr>
-	<th>Players (<?php echo htmlspecialchars($Info['Players'])."/".htmlspecialchars($Info['MaxPlayers']); ?>)</th>
+	<th>Players (<?php echo htmlspecialchars($result['Last_Players'])."/".htmlspecialchars($result['Last_MaxPlayers']); ?>)</th>
 </tr>
 </thead>
 <tbody>
 
 <?php
 $re = 0;
-foreach($Players as $p)
+foreach(json_decode($result['Players'], true) as $p)
 {
 if($re == 0 or ($re %2 == 0))
 {
@@ -220,4 +220,4 @@ $re++;
 </div>-->
 <hr>
  
-<?php include 'footer.php';?>
+<?php require_once(__DIR__.'/_layout/footer.php');?>

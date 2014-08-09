@@ -1,6 +1,7 @@
 <?
 
-require_once('constants.php');
+require_once(__DIR__.'/_libs/constants.php');
+require_once(__DIR__.'/_libs/minecraft_includes.php');
 
 function addIP($ip, $port = "19132", $username, $whitelist)
 {

@@ -1,6 +1,5 @@
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/../global.inc.php');;
-include $_SERVER['DOCUMENT_ROOT'].'/header.php';
+<?php
+require_once(__DIR__.'/../../_layout/header.php');
 ?>
 
 		<?$Timer = MicroTime( true ); 
@@ -61,5 +60,5 @@ if ($login->messages) {
 	
 </div>
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/footer.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/_layout/footer.php';
 ?>

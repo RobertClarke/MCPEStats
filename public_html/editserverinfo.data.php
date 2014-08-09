@@ -1,9 +1,6 @@
 <?
-require_once("login/libraries/password_compatibility_library.php");
-require_once("login/config/db.php");
-require_once("login/config/hashing.php");
-require_once("login/classes/Login.php");
-require_once('constants.php');
+require_once(__DIR__.'/_libs/login_includes.php');
+require_once(__DIR__.'/_libs/constants.php');
 
 $login = new Login();
 

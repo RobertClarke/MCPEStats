@@ -133,14 +133,32 @@ function parseOnlineStatus($x)
 <div class='thumbnail'>
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">
-  <?php echo $result['Description']; ?>
+  <?php
+  if($result['Description'] !== "")
+  {
+      echo $result['Description'];
+  }
+  else
+  {
+      echo BLANK_DESCRIPTION_MESSAGE;
+  }
+  ?>
   </p>
 </div>
 <br><br>
 <div class='thumbnail'>
 <div class='centered-text'><h5>Server Rules</h5></div>
   <p style="padding:0 19px">
-  <?php echo $result['ServerRules']; ?>
+<?php
+    if($result['ServerRules'] !== "")
+    {
+        echo $result['ServerRules'];
+    }
+    else
+    {
+        echo BLANK_SERVER_RULES_MESSAGE;
+    }
+?>
   </p>
 </div>
 <br><br>

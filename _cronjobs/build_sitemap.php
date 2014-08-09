@@ -22,6 +22,8 @@ try {
 $Sitemap = new Sitemap('http://mcpestats.com');
 $Sitemap->setPath("/var/www/mcpestats.com/public_html/");
 
+$Sitemap->addItem("/", '1.0', 'hourly');
+
 foreach($Servers as $Server)
 {
     $Sitemap->addItem("/server/{$Server['id']}", '0.5', 'daily');

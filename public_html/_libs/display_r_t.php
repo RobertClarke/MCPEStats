@@ -10,7 +10,6 @@ function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $c
 {
     preg_match('/\d+(\.\d+)+/', $serverversion, $matches);
     $serverversion = $matches[0];
-    var_dump($matches);
 
     echo "<tr>";
     echo "<td><a href=/server/$id>$name</a></td>";

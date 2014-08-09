@@ -134,7 +134,9 @@ function parseOnlineStatus($x)
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">
   <?php
-  if($result['Description'])
+  var_dump($result['Description']);
+  var_dump($result['ServerRules']);
+  if($result['Description'] !== "")
   {
       echo $result['Description'];
   }
@@ -150,7 +152,7 @@ function parseOnlineStatus($x)
 <div class='centered-text'><h5>Server Rules</h5></div>
   <p style="padding:0 19px">
 <?php
-    if($result['ServerRules'])
+    if($result['ServerRules'] !== "")
     {
         echo $result['ServerRules'];
     }

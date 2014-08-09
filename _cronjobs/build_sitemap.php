@@ -23,6 +23,8 @@ $Sitemap = new Sitemap('http://mcpestats.com');
 $Sitemap->setPath("/var/www/mcpestats.com/public_html/");
 
 $Sitemap->addItem("/", '1.0', 'hourly');
+$Sitemap->addItem("/login/index.php", '0.3', 'monthly');
+$Sitemap->addItem("/insert.php", '0.3', 'monthly');
 
 foreach($Servers as $Server)
 {

@@ -17,7 +17,7 @@ while($data = mysqli_fetch_array($result))
 	unset($Info);
 	try
 	{	
-		$Query = new MinecraftQuery( );
+		$Query = new MinecraftQuery();
 		$Query->Connect($data['IP'], $data['Port'], 5);
 	}
 	catch( MinecraftQueryException $e )
@@ -27,12 +27,18 @@ while($data = mysqli_fetch_array($result))
 	
 	}
 	
-	$Info = $Query->GetInfo( );
+	$Info = $Query->GetInfo();
+    $Players = $Query->GetPlayers();
 	if($Info !== false)
 	{
-			$query = "UPDATE ServerList1 SET Name=\"".mysqli_real_escape_string($connect, $Info['HostName'])."\", Port='".mysqli_real_escape_string($connect, $Info['HostPort'])."', Last_Players='".mysqli_real_escape_string($connect, $Info['Players'])."', Last_MaxPlayers='".mysqli_real_escape_string($connect, $Info['MaxPlayers'])."', WhetherOnline='Online', WhetherOnlineNum='0' , GameMode='".mysqli_real_escape_string($connect, $Info['GameType'])."'WHERE id='".$data['id']."'";
+			$query = "UPDATE ServerList1 SET Name=\"".mysqli_real_escape_string($connect, $Info['HostName'])."\", Port='".mysqli_real_escape_string($connect, $Info['HostPort'])."', Last_Players='".mysqli_real_escape_string($connect, $Info['Players'])."', Last_MaxPlayers='".mysqli_real_escape_string($connect, $Info['MaxPlayers'])."', WhetherOnline='Online', WhetherOnlineNum='0', GameMode='".mysqli_real_escape_string($connect, $Info['GameType'])."' WHERE id='".$data['id']."'";
 			mysqli_query($connect, $query) or die(mysqli_error($connect));
-	
+			mysqli_query($connect, "UPDATE ServerList1 SET ServerMCPEVersion='".mysqli_real_escape_string($connect, $Info['Version'])."' WHERE id='".$data['id']."'") or die(mysqli_error($connect));
+			mysqli_query($connect, "UPDATE ServerList1 SET Map='".mysqli_real_escape_string($connect, $Info['Map'])."' WHERE id='".$data['id']."'") or die(mysqli_error($connect));
+			mysqli_query($connect, "UPDATE ServerList1 SET GameType='".mysqli_real_escape_string($connect, $Info['GameType'])."' WHERE id='".$data['id']."'") or die(mysqli_error($connect));
+			mysqli_query($connect, "UPDATE ServerList1 SET Software='".mysqli_real_escape_string($connect, $Info['Software'])."' WHERE id='".$data['id']."'") or die(mysqli_error($connect));
+			mysqli_query($connect, "UPDATE ServerList1 SET Plugins='".mysqli_real_escape_string($connect, json_encode($Info['Plugins']))."' WHERE id='".$data['id']."'") or die(mysqli_error($connect));
+			mysqli_query($connect, "UPDATE ServerList1 SET Players='".mysqli_real_escape_string($connect, json_encode($Players))."' WHERE id='".$data['id']."'") or die(mysqli_error($connect));
 	}
 	else
 	{

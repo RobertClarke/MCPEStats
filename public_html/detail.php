@@ -134,8 +134,6 @@ function parseOnlineStatus($x)
 <div class='centered-text'><h5>Description</h5></div>
   <p style="padding:0 19px">
   <?php
-  var_dump($result['Description']);
-  var_dump($result['ServerRules']);
   if($result['Description'] !== "")
   {
       echo $result['Description'];

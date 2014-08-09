@@ -13,7 +13,7 @@ function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $c
 
     echo "<td>$customname</td>";
 
-    echo "<td>$serverversion</td>";
+    echo "<td style='white-space: nowrap;'>$serverversion</td>";
 
     echo "
           <td>$ip:$port</td>

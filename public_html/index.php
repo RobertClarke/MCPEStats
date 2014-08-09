@@ -74,8 +74,8 @@ if ($login->messages) {
 	  <thead>
       <tr>
           <th>Name</th>
-          <th>Owner</th>
           <th>Version</th>
+          <th>Whitelist</th>
           <th>Server IP</th>
           <th>Players</th>
           <th>Status</th>                                         

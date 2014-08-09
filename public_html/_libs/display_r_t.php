@@ -9,10 +9,7 @@
 function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $whitelist, $id)
 {
     echo "<tr>";
-    if($onlinestatus == "Online")
-        echo "<td><a href=/server/$id>$name</a></td>";
-    else
-        echo "<td>$name</td>";
+    echo "<td><a href=/server/$id>$name</a></td>";
 
     echo "<td>$customname</td>";
 

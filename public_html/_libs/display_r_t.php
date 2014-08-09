@@ -6,21 +6,14 @@
  * Time: 12:19 AM
  */
 
-function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $whitelist, $id)
+function display_r_t($name, $ip, $players, $maxplayers, $onlinestatus, $port, $customname, $whitelist, $id, $serverversion)
 {
     echo "<tr>";
     echo "<td><a href=/server/$id>$name</a></td>";
 
     echo "<td>$customname</td>";
 
-    if($whitelist == 0)
-        echo '<td><span class="label label-success">Public</span></td>';
-    else if($whitelist == 1)//Whitelist
-        echo '<td><span class="label label-important">Whitelisted</span></td>';
-    else if($whitelist == 2)//Registdation
-        echo '<td><span class="label label-warning">Registdation</span></td>';
-    else
-        echo '<td><span class="label label-important">Unknown</span></td>';
+    echo "<td>$serverversion</td>";
 
     echo "
           <td>$ip:$port</td>

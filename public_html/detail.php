@@ -18,7 +18,7 @@ $id = mysqli_real_escape_string($connect, $id);
 
 $result = array();
 
-$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules FROM ServerList1 WHERE id=? LIMIT 0,1");
+$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules, ServerMCPEVersion, Map, GameType, Software FROM ServerList1 WHERE id=? LIMIT 0,1");
 mysqli_stmt_bind_param($stmt, "d", $id);
 mysqli_stmt_bind_result($stmt, $result['id'], $result['Name'], $result['IP'], $result['Port'], $result['Last_Players'], $result['Last_MaxPlayers'], $result['WhetherOnline'], $result['RegisteredDate'], $result['WhetherOnlineNum'], $result['Owner'], $result['WhetherWhitelisted'], $result['Description'], $result['ServerRules']);
 mysqli_stmt_execute($stmt);
@@ -29,53 +29,20 @@ $_DESCRIPTION = $result['Name'].', '.$result['IP'].' - Minecraft Pocket Edition 
 $_TITLE = $result['Name'].' - Minecraft PE Server';
 require_once(__DIR__.'/_layout/header.php');
 
-try
+function parseWhitelist($whitelist)
 {
-		$Query->Connect($result['IP'], $result['Port'], 5 );
+    switch($whitelist)
+    {
+        case 0:
+            return "<span class='label label-success'>Public</span>";
+            break;
+        case 1:
+            return "<span class='label label-important'>Whitelisted</span>";
+            break;
+        default:
+            return "<span class='label label-warning'>Unknown</span>";
+    }
 }
-catch( MinecraftQueryException $e )
-{
-		$Error = $e->getMessage( );
-}	
-
-		if(isset($Error) or $result == 0)
-		{
-		?><div class='alert alert-info'>
-		<a href=/><< Back</a>
-			<h4 class='alert-heading'>Exception:</h4>
-			<? echo htmlspecialchars($Error); ?>
-			<br>
-			If you are getting this error, the id variable probably isn't valid.</div>
-			
-		<footer>
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/_layout/_layout/footer.php'); ?>
-		</footer>
-	</div>
-</div>
-</body></html><?php
-
-		exit();
-		}
-
-        /** @var array $Info */
-		$Info = $Query->GetInfo( );
-        /** @var array $Players */
-		$Players = $Query->GetPlayers( );
-		
-		function parseWhitelist($whitelist)
-		{
-			switch($whitelist)
-			{
-				case 0:
-					return "<span class='label label-success'>Public</span>";
-					break;
-				case 1:
-					return "<span class='label label-important'>Whitelisted</span>";
-					break;
-				default:
-					return "<span class='label label-warning'>Unknown</span>";
-			}
-		}
 		?>
 <h2><?php echo htmlspecialchars($result['Name']); ?></h2>
 
@@ -95,13 +62,13 @@ catch( MinecraftQueryException $e )
   <dt>Registration Date</dt>
   <dd><?php echo htmlspecialchars($result['RegisteredDate']); ?></dd>
   <dt>Map</dt>
-  <dd><?php echo htmlspecialchars($Info['Map']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Map']); ?></dd>
   <dt>Gamemode</dt>
-  <dd><?php echo htmlspecialchars($Info['GameType']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['GameType']); ?></dd>
   <dt>Version</dt>
-  <dd><?php echo htmlspecialchars($Info['Version']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['ServerMCPEVersion']); ?></dd>
   <dt>Software</dt>
-  <dd><?php echo htmlspecialchars($Info['Software']); ?></dd>
+  <dd><?php echo htmlspecialchars($result['Software']); ?></dd>
   <dt>Whitelist</dt>
   <dd><?php echo parseWhitelist($result['WhetherWhitelisted']); ?></dd>
 </dl>
@@ -111,7 +78,7 @@ catch( MinecraftQueryException $e )
 <div class='row-fluid'>
 <div class='centered-text span6'><h5>Plugins</h5>
   <?php
-  foreach($Info['Plugins'] as $p)
+  foreach(json_decode($result['Plugins'], true) as $p)
   {
   	echo htmlspecialchars($p)."<br>";
   }
@@ -164,14 +131,14 @@ catch( MinecraftQueryException $e )
 <table class='table table-bordered table-striped'>
 <thead>
 <tr>
-	<th>Players (<?php echo htmlspecialchars($Info['Players'])."/".htmlspecialchars($Info['MaxPlayers']); ?>)</th>
+	<th>Players (<?php echo htmlspecialchars($result['Last_Players'])."/".htmlspecialchars($result['Last_MaxPlayers']); ?>)</th>
 </tr>
 </thead>
 <tbody>
 
 <?php
 $re = 0;
-foreach($Players as $p)
+foreach(json_decode($result['Players'], true) as $p)
 {
 if($re == 0 or ($re %2 == 0))
 {
@@ -218,4 +185,4 @@ $re++;
 </div>-->
 <hr>
  
-<?php include '_layout/_layout/footer.php';?>
+<?php require_once(__DIR__.'/_layout/footer.php');?>

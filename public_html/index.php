@@ -74,7 +74,7 @@ if ($login->messages) {
 	  <thead>
       <tr>
           <th>Name</th>
-          <th>Owner</th>
+          <th>Version</th>
           <th>Whitelist</th>
           <th>Server IP</th>
           <th>Players</th>
@@ -164,7 +164,7 @@ foreach($servers as $row){
 			<tbody>
 		<?php
 	}
-	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']));
+	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']), htmlspecialchars($row['ServerMCPEVersion']));
 }
 mysqli_close($connect);
 

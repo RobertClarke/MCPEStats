@@ -66,9 +66,9 @@ if ($login->messages) {
 }
 ?>
 
-<!--<div class="alert alert-success">
- Starting a new MCPE world and need <a href="http://mcpehub.com/seeds">Minecraft PE Seeds</a>? We've got a site for that :)
-</div>-->
+<div class="alert alert-success">
+ Get ready for the 0.10.0 update with <a href="http://mcpehub.com/skins">Minecraft PE Skins</a> and pick out your favorite skin!
+</div>
 
 <table class="table table-striped table-condensed">
 	  <thead>

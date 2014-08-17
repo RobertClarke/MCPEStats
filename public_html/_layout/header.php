@@ -137,7 +137,7 @@ $login = new Login();
 <div class="twelve columns main feat">
 <h1>Minecraft PE Servers</h1>
 <p>We track Minecraft PE Servers to help you find the perfect Minecraft PE server based on plugins and player data. Looking for <a href="http://mcpehub.com/seeds">Minecraft PE Seeds</a>? We've got you covered :)</p>
-<!--<center><a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe"><img src="/assets/images/netherbox.jpg"></a></center>->
+<!--<center><a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe"><img src="/assets/images/netherbox.jpg"></a></center>-->
 <center><a href="http://b1831f25s0tllw66pkqx08orcd.hop.clickbank.net/" target="_blank"><img src="http://www.mcraftblueprint.com/img/728x90.gif" alt="Minecraft Blueprint"></a></center>
 </div>
 </div>

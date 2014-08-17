@@ -9,7 +9,7 @@ $login = new Login();
     <meta http-equiv="Lang" content="en">
     <meta name="verifyownership" content="fd5c9069ea667f2d5d8e3f0ee7284055" />
 
-    <title><?php echo ($_TITLE ? $_TITLE: 'Minecraft PE Servers | MCPE Server List'); ?></title>
+    <title><?php echo ($_TITLE ? $_TITLE: 'Minecraft PE Servers | MCPE Servers List'); ?></title>
     <meta name="description" content="<?php echo ($_DESCRIPTION ? $_DESCRIPTION : 'Find a list of the best Minecraft PE servers for you to play on with your friends. Our MCPE Servers list contains all the best MCPE servers around.'); ?>">
     <meta name="keywords" content="minecraft pe servers, mcpe servers, pocketmine servers, mcpe server list, minecraft pe server list">
 

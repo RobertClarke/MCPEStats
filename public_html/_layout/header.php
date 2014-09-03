@@ -93,16 +93,13 @@ $login = new Login();
 			  <!-- Left Nav Section -->
 			  <ul class="left">
 				<li>
-				  <a href="/insert.php">add server</a>
+				  <a href="/insert">add server</a>
 				</li>
 				<li>
 				  <a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe">start a server</a>
 				</li>
 				<li>
-				  <a href="http://instantmc.org">free minecraft server hosting</a>
-				</li>
-				<li>
-				  <a href="http://instantmcpe.com">instantmcpe</a>
+				  <a href="/links">links</a>
 				</li>
 			  </ul>
 

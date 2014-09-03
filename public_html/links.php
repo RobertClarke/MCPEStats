@@ -20,10 +20,20 @@ require_once(__DIR__.'/_layout/header.php');
 
 <div class="eight columns">
   <fieldset>
+    <p><strong><a href="http://instantmcpe.com">Free Minecraft PE Servers</a></strong></br>
+    Start your own MCPE server with the click of a button.
+    <p><strong><a href="http://mcpehub.com/maps">Minecraft PE Maps</a></strong></br>
+    Collection of the best Minecraft PE Maps and game worlds
     <p><strong><a href="http://mcpehub.com/seeds">Minecraft PE Seeds</a></strong></br>
     Helping you find the best Minecraft PE seeds.
-    <p><strong><a href="http://mcpehub.com/maps">Minecraft PE Maps</a></strong></br>
-    Helping you find the best Minecraft PE seeds.
+    <p><strong><a href="http://mcpehub.com/textures">Minecraft PE Texture Packs</a></strong></br>
+    Download and find texture packs for Minecraft PE.
+    <p><strong><a href="http://mcpehub.com/skins">Minecraft PE Skins</a></strong></br>
+    The MCPEHub skin section is great for finding new skins for your in-game character.
+    <p><strong><a href="http://mcpehub.com/mods">Minecraft PE Mods</a></strong></br>
+    Downloads and guides for the best Minecraft PE mods.
+    <p><strong><a href="http://instantmc.org">Free Minecraft Server Hosting</a></strong></br>
+    Instant Minecraft PC servers.
   </fieldset>
 </div>
 </div>

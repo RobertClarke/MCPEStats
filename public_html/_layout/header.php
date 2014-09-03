@@ -114,7 +114,7 @@ $login = new Login();
                         }
                         else
                         {
-                            echo '<li><a href="/login/index.php">login</a></li>';
+                            echo '<li><a href="/login/">login</a></li>';
                         }
                     ?>
                 </ul>

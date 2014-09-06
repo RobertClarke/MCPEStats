@@ -36,6 +36,8 @@ require_once(__DIR__.'/_layout/header.php');
     Downloads and guides for the best Minecraft PE mods.
     <p><strong><a href="http://instantmc.org">Free Minecraft Server Hosting</a></strong></br>
     Instant Minecraft PC servers.
+    <p><strong><a href="http://minecraftcolorcodes.com">Minecraft Color Codes</a></strong></br>
+    A handy reference website for the Minecraft chat color codes.
   </fieldset>
 </div>
 </div>

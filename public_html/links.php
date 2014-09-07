@@ -20,7 +20,7 @@ require_once(__DIR__.'/_layout/header.php');
 
 <div class="eight columns">
   <fieldset>
-    <p><strong><a href="http://instantmcpe.com">Free Minecraft PE Servers</a></strong></br>
+    <p><strong><a href="http://instantmcpe.com">Free Minecraft PE Hosting</a></strong></br>
     Start your own MCPE server with the click of a button.
     <p><strong><a href="http://minecraftpeupdate.com">Minecraft PE Update</a></strong></br>
     Information and updates for Minecraft PE.

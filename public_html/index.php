@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Get ready for the 0.10.0 update with <a href="http://mcpehub.com/skins">Minecraft PE Skins</a> and pick out your favorite skin!
+ Want to start your own server? Check out NetherBox for the best <strong><a href="https://netherbox.com">minecraft server hosting</a></strong>.
 </div>
 
 <table class="table table-striped table-condensed">

@@ -50,14 +50,6 @@ function addIP($ip, $port = "19132", $username, $whitelist)
 		$Info = $Query->GetInfo( );
 		if($Info !== false)
 		{
-			if($Info['HostName'] == "MCPEListClaimServer" or in_array("MCPEListClaimServer 1.0.0", $Info['Plugins']) or $Info['Plugins'] == "MCPEListClaimServer 1.0.0")
-			{
-				
-			}
-			else
-			{
-				return "Server's ownership cannot be verified. Did you change the hostname to 'MCPEListClaimServer'?";
-			}
 			$stmt = mysqli_prepare($connect, "INSERT INTO ServerList1 (IP, Port, Owner, WhetherWhitelisted) VALUES (?, ?, ?, ?)");
 			mysqli_stmt_bind_param($stmt, "sdsd", $ip, $port, $username, $whitelist);
 			$result = mysqli_stmt_execute($stmt);

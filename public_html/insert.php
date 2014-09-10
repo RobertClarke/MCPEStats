@@ -22,19 +22,8 @@ require_once(__DIR__.'/_layout/header.php');
 
   <fieldset>
 
-    <p>You must own the server you are trying to register. You MUST also set the server's host name to 'MCPEListClaimServer' during the registration process. If your server is too big(20+ players at any given time) and cannot afford to change the hostname, contact our team at the bottom to have your server manually added. Currently only PocketMine servers are accepted due the limitations of the Mojang Client.</p>
-    <p>How to change the hostname:<br>
-    1. Turn your server off<br>
-    2. Start up your server with './start.(cmd|bat|sh) --server-name MCPEListClaimServer'<br>
-    3. Register your server using the form below<br>
-    4. Shut your server down<br>
-    5. Turn your server back on with './start.sh' to put your hostname back to normal.<br>
-    </p>
-    <p>
-    Alternatively you can download <a href=/MCPEListClaimServer.pmf>this dummy plugin</a> and install it on your server. Please make sure you remove this plugin after you have claimed the server to prevent your server from being claimed by others.<br>
-    <br>
-    Both methods will require rebooting a server due to PocketMine restrictions.
-    The whole process should take about 30 seconds(Only 30 seconds! I'm sure your players will come back with a 10 seconds of donwtime!)
+    <p>To add a server to MCPEStats, enter the IP and port here. You must own the server you are trying to register. You must also own the server(s) you add to MCPEStats.</p><br>
+    <p>If you don't yet have a server, you can get one from <a href="https://netherbox.com/plans.php?mcpe">NetherBox</a>.</p>
 </div>
 <div class="four columns">
 	<form class="form-horizontal" action='insert.data.php' method="POST">

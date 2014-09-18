@@ -40,6 +40,8 @@ require_once(__DIR__.'/_layout/header.php');
     Instant Minecraft PC servers.
     <p><strong><a href="http://minecraftcolorcodes.com">Minecraft Color Codes</a></strong></br>
     A handy reference website for the Minecraft chat color codes.
+    <p><strong><a href="https://rust-servers.com">Rust Server Hosting</a></strong></br>
+    Quick and easy hosting for rust.
   </fieldset>
 </div>
 </div>

@@ -28,8 +28,8 @@ class Login {
     public      $errors                        = array();               // collection of error messages
     public      $messages                      = array();               // collection of success / neutral messages
     
-    public	$moderators		       = array("sekjun9878test", "RobertClarke");
-    public	$administrators		       = array("sekjun9878test", "RobertClarke");
+    public	$moderators		       = array("RobertClarke");
+    public	$administrators		       = array("RobertClarke");
     
     
     /**

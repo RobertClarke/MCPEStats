@@ -29,4 +29,4 @@
 
 // the hash cost factor, PHP's internal default is 10. You can leave this line commented out until you need
 // another factor then 10.
-//define("HASH_COST_FACTOR", "10");
+define("HASH_COST_FACTOR", "10");

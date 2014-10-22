@@ -67,7 +67,7 @@ if ($login->messages) {
 ?>
 
 <div class="alert alert-success">
- Want to start your own server? Check out NetherBox for the best <strong><a href="https://netherbox.com">minecraft server hosting</a></strong>.
+   Be sure to follow <a href="http://twitter.com/mcpestats">@mcpestats</a> on Twitter for updates, giveaways, and more.
 </div>
 
 <table class="table table-striped table-condensed">

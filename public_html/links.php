@@ -36,7 +36,7 @@ require_once(__DIR__.'/_layout/header.php');
     The MCPEHub skin section is great for finding new skins for your in-game character.
     <p><strong><a href="http://mcpehub.com/mods">Minecraft PE Mods</a></strong></br>
     Downloads and guides for the best Minecraft PE mods.
-    <p><strong><a href="http://instantmc.org">Free Minecraft Server Hosting</a></strong></br>
+    <p><strong><a href="https://imc.io">Free Minecraft Server Hosting</a></strong></br>
     Instant Minecraft PC servers.
     <p><strong><a href="http://minecraftcolorcodes.com">Minecraft Color Codes</a></strong></br>
     A handy reference website for the Minecraft chat color codes.

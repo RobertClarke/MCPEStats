@@ -99,6 +99,9 @@ $login = new Login();
 				  <a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe">start a server</a>
 				</li>
 				<li>
+				  <a href="/contact">contact</a>
+				</li>
+				<li>
 				  <a href="/links">links</a>
 				</li>
 			  </ul>

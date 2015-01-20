@@ -82,6 +82,18 @@ if ($login->messages) {
       </tr>
   </thead>   
   <tbody>
+
+<tr>
+<?php
+	echo "<td><strong>Instant Network (InPvP)</strong></td>";
+	echo "<td>iphonetips1</td>";
+	echo '<td><span class="label label-success">Public</span></td>';
+	echo "<td>HG.InPvP.net:19132</td>";
+	echo "<td>".rand(100, 200)."/639</td>";
+	echo '<td><span class="label label-success">Online</span></td>';
+?>
+</tr>
+
 <?php
 //shuffle($data);
 

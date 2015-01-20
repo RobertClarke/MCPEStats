@@ -86,10 +86,10 @@ if ($login->messages) {
 <tr>
 <?php
 	echo "<td><strong>Instant Network (InPvP)</strong></td>";
-	echo "<td>iphonetips1</td>";
+	echo "<td><strong>0.10.5</strong></td>";
 	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td>HG.InPvP.net:19132</td>";
-	echo "<td>".rand(100, 200)."/639</td>";
+	echo "<td><strong>HG.InPvP.net:19132</strong></td>";
+	echo "<td><strong>".rand(100, 200)."/639</strong></td>";
 	echo '<td><span class="label label-success">Online</span></td>';
 ?>
 </tr>

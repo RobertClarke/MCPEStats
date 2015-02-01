@@ -89,7 +89,7 @@ if ($login->messages) {
 	echo "<td><strong>0.10.5</strong></td>";
 	echo '<td><span class="label label-success">Public</span></td>';
 	echo "<td><strong>HG.InPvP.net:19132</strong></td>";
-	echo "<td><strong>".rand(100, 200)."/639</strong></td>";
+	echo "<td><strong>".rand(150, 300)."/639</strong></td>";
 	echo '<td><span class="label label-success">Online</span></td>';
 ?>
 </tr>

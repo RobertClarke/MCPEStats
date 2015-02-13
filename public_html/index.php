@@ -3,28 +3,33 @@ require_once(__DIR__.'/_layout/header.php');
 require_once(__DIR__.'/_libs/constants.php');
 require_once(__DIR__.'/_libs/display_r_t.php');
 
-if($_GET['delete']){
+$priorityServers = explode("\n",
+	str_replace("\r\n", "\n",
+		file_get_contents(__DIR__."/../priority.list")));
+
+if($_GET['delete'])
+{
 	$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
-mysqli_select_db($connect, DB_NAME);
+	mysqli_select_db($connect, DB_NAME);
 
-$id = strip_tags($_GET['delete']);
-$id = preg_replace('/\s\s+/', ' ', $id);
-$id = mysqli_real_escape_string($connect, $id);
+	$id = strip_tags($_GET['delete']);
+	$id = preg_replace('/\s\s+/', ' ', $id);
+	$id = mysqli_real_escape_string($connect, $id);
 
-$result = array();
+	$result = array();
 
-$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules FROM ServerList1 WHERE id=? LIMIT 0,1");
-mysqli_stmt_bind_param($stmt, "d", $id);
-mysqli_stmt_bind_result($stmt, $result['id'], $result['Name'], $result['IP'], $result['Port'], $result['Last_Players'], $result['Last_MaxPlayers'], $result['WhetherOnline'], $result['RegisteredDate'], $result['WhetherOnlineNum'], $result['Owner'], $result['WhetherWhitelisted'], $result['Description'], $result['ServerRules']);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);
+	$stmt = mysqli_prepare($connect, "SELECT id, Name, IP, Port, Last_Players, Last_MaxPlayers, WhetherOnline, RegisteredDate, WhetherOnlineNum, Owner, WhetherWhitelisted, Description, ServerRules FROM ServerList1 WHERE id=? LIMIT 0,1");
+	mysqli_stmt_bind_param($stmt, "d", $id);
+	mysqli_stmt_bind_result($stmt, $result['id'], $result['Name'], $result['IP'], $result['Port'], $result['Last_Players'], $result['Last_MaxPlayers'], $result['WhetherOnline'], $result['RegisteredDate'], $result['WhetherOnlineNum'], $result['Owner'], $result['WhetherWhitelisted'], $result['Description'], $result['ServerRules']);
+	mysqli_stmt_execute($stmt);
+	mysqli_stmt_fetch($stmt);
+	mysqli_stmt_close($stmt);
 
-if($result['Owner'] == $_SESSION['user_name']){
-	$query = "delete from ServerList1 where owner = '$result[Owner]' AND id = $id";
-
-$result = mysqli_query($connect, $query);
-}
+	if($result['Owner'] == $_SESSION['user_name'])
+	{
+		$query = "delete from ServerList1 where owner = '$result[Owner]' AND id = $id";
+		$result = mysqli_query($connect, $query);
+	}
 }
 
 if(isset($_GET['serveradded']) and $_GET['serveradded'] == 'true')
@@ -72,36 +77,35 @@ if ($login->messages) {
 
 <table class="table table-striped table-condensed">
 	  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Version</th>
-          <th>Whitelist</th>
-          <th>Server IP</th>
-          <th>Players</th>
-          <th>Status</th>                                         
-      </tr>
-  </thead>   
-  <tbody>
-
-<tr>
+	      <tr>
+	          <th>Name</th>
+	          <th>Version</th>
+	          <th>Whitelist</th>
+	          <th>Server IP</th>
+	          <th>Players</th>
+	          <th>Status</th>
+	      </tr>
+	  </thead>
+	<tbody>
 <?php
-	echo "<td><strong>Instant Network (InPvP)</strong></td>";
-	echo "<td><strong>0.10.5</strong></td>";
-	echo '<td><span class="label label-success">Public</span></td>';
-	echo "<td><strong>HG.InPvP.net:19132</strong></td>";
-	echo "<td><strong>".rand(150, 300)."/639</strong></td>";
-	echo '<td><span class="label label-success">Online</span></td>';
-?>
-</tr>
-
-<?php
-//shuffle($data);
 
 //For some reason this needs to go below the table statement. Weird.
 
 $servers = array();
 $connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS);
 mysqli_select_db($connect, DB_NAME);
+
+if($priorityServers !== "")
+{
+	//Safe: Variable is sourced from file on disk
+	$query = "SELECT * FROM ServerList1 WHERE id IN (".implode(',', $priorityServers).") ORDER BY rand(HOUR(NOW()));";
+
+	$result = mysqli_query($connect, $query);
+
+	while($row = $result->fetch_assoc()){
+		array_push($servers,$row);
+	}
+}
 
 $query = "select * from ServerList1 where WhetherOnline='Online' AND WhetherWhiteListed='0' ORDER BY rand(HOUR(NOW()))";
 
@@ -176,7 +180,15 @@ foreach($servers as $row){
 			<tbody>
 		<?php
 	}
-	display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']), htmlspecialchars($row['ServerMCPEVersion']));
+
+	if(in_array($row['id'], $priorityServers))
+	{
+		display_priority_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']), htmlspecialchars($row['ServerMCPEVersion']));
+	}
+	else
+	{
+		display_r_t(htmlspecialchars($row['Name']), htmlspecialchars($row['IP']), htmlspecialchars($row['Last_Players']), htmlspecialchars($row['Last_MaxPlayers']), htmlspecialchars($row['WhetherOnline']), htmlspecialchars($row['Port']), htmlspecialchars($row['Owner']), htmlspecialchars($row['WhetherWhitelisted']), htmlspecialchars($row['id']), htmlspecialchars($row['ServerMCPEVersion']));
+	}
 }
 mysqli_close($connect);
 

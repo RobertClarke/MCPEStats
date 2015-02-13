@@ -46,7 +46,7 @@ function display_priority_r_t($name, $ip, $players, $maxplayers, $onlinestatus, 
 	$serverversion = $matches[0];
 
 	echo "<tr>";
-	echo "<td><a href=/server/$id><strong>$name</strong></a></td>";
+	echo "<td><a class=\"td-priority-server-name\" href=/server/$id><strong>$name</strong></a></td>";
 
 	echo "<td style='white-space: nowrap;'><strong>$serverversion</strong></td>";
 

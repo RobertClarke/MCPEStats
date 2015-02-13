@@ -1,0 +1,7 @@
+.td-priority-server-name {
+	color: #333333;
+}
+
+.td-priority-server-name:hover {
+	text-decoration: underline;
+}

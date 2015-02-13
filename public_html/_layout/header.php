@@ -19,6 +19,7 @@ $login = new Login();
     <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css">
     <link rel="stylesheet" href="/assets/stylesheets/app.css">
     <link rel="stylesheet" href="/assets/bootstrap.css">
+    <link rel="stylesheet" href="/assets/stylesheets/mcpestats.css">
     <script src="/assets/javascripts/jquery.js"></script>
     <script src="/assets/javascripts/foundation.min.js"></script>
     <script src="/assets/javascripts/app.js"></script>

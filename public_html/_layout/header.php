@@ -97,7 +97,7 @@ $login = new Login();
 				  <a href="/insert">add server</a>
 				</li>
 				<li>
-				  <a href="http://billing.netherbox.com/aff.php?aff=004&url=http://netherbox.com/plans.php?mcpe">start a server</a>
+				  <a href="https://netherbox.com/mcpestats">start a server</a>
 				</li>
 				<li>
 				  <a href="/contact">contact</a>

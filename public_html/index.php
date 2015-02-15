@@ -90,9 +90,10 @@ if ($login->messages) {
 }
 ?>
 
-<div class="alert alert-success">
+
+<!--<div class="alert alert-success">
 	Be sure to follow <a href="http://twitter.com/mcpestats">@mcpestats</a> on Twitter for updates, giveaways, and more.
-</div>
+</div>-->
 
 <table class="table table-striped table-condensed">
 	<thead>

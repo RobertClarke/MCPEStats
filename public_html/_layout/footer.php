@@ -13,8 +13,8 @@
 			</div></center>
 		</div>
 		<footer>
-	<p class="pull-right">Contact<a href="/contact"></a></p>
-	<p>&copy; 2013 - <?php echo date("Y") ?> MCPEStats</a></p>
+	<p class="pull-right"><a href="/contact">Contact</a></p>
+	<p>&copy; 2013 - <?php echo date("Y") ?> <a href="http://cubemotion.com">CubeMotion</a></a></p>
 		</footer>
 	</div>
 </div>

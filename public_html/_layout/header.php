@@ -100,9 +100,6 @@ $login = new Login();
 				  <a href="https://netherbox.com/p/mcpestats">start a server</a>
 				</li>
 				<li>
-				  <a href="/contact">contact</a>
-				</li>
-				<li>
 				  <a href="/links">links</a>
 				</li>
 			  </ul>
